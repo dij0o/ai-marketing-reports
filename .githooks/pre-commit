@@ -1,0 +1,2 @@
+#!/bin/sh
+python scripts/scan_for_private_data.py || { echo "Commit blocked by private-data scan."; exit 1; }

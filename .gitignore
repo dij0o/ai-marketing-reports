@@ -1,0 +1,24 @@
+# Secrets and credentials - never commit
+.secrets/
+*.pem
+*.key
+*sa.json
+*service-account*.json
+*oauth-client*.json
+*oauth-token*.json
+client_secret*.json
+.env
+.env.*
+
+# Your own configuration (IDs) and generated data
+config.json
+snapshots/
+crm_qualified_leads.csv
+*.xlsx
+*.xls
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

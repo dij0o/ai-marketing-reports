@@ -50,7 +50,7 @@ def ads():
 
 
 def ga4_paid():
-    svc = gc.ga4_data_client()
+    svc = gc.ga4_data()
     paid = {"filter": {"fieldName": "sessionDefaultChannelGroup", "stringFilter": {"value": "Paid Search"}}}
     rng = [{"startDate": START, "endDate": END}]
 

@@ -8,36 +8,27 @@ The full walkthrough is in the companion blog post. This repo holds the code.
 
 ## How access works
 
-Every product can be reached two ways. You choose per product in `config.json` under `auth`.
+Every script signs in as one **service account**: a robot user with its own JSON key. You create it once and add its email address as a user in each product. Enabling an API is not enough on its own; the robot must be a user of the product too.
 
-| Route | Identity | Choose it when |
+| Product | Add the robot as | What the scripts do |
 | --- | --- | --- |
-| `"service_account"` | A robot user with a JSON key | You own the property (or can ask an admin) and can add the robot's email as a user |
-| `"user"` (default) | Your own Google account, signed in once, read-only | Your organisation limits who can add users, so you cannot add a robot |
+| Search Console | A user on the property (Settings > Users and permissions) | Read queries, pages, sitemaps, URL inspection |
+| GA4 | **Editor** on the property (Admin > Property access management) | Read reports; optionally change settings with `ga4_configure.py` |
+| Google Tag Manager | **Edit** (or Approve) on the container | Read, edit a workspace, create versions (a human publishes) |
+| Google Ads | A user on the account (Admin > Access and security) | Reporting and Keyword Planner |
 
-| Product | Supported routes | Default in this repo |
-| --- | --- | --- |
-| Search Console | `user` or `service_account` | `user` |
-| GA4 (reports and settings) | `user` or `service_account` | `user` |
-| Google Tag Manager | service account | service account |
-| Google Ads | service account | service account |
-
-If you run your own organisation you can create the service account and add it to Search Console and GA4 as well, then set both to `"service_account"`. Everything else works unchanged. A service account is the tidier choice for unattended schedules because it has no browser sign-in to expire.
-
-```json
-"auth": { "search_console": "service_account", "ga4": "service_account" }
-```
-
-For GA4 settings changes (`ga4_configure.py`): with `"user"`, sign in with `python scripts/oauth_login.py --ga4-admin` and be an Editor on the property; with `"service_account"`, add the robot as Editor.
+You need to be an owner or admin of each product to add the robot. If you are not, ask someone who is to add the email address.
 
 ## Setup
 
 1. Create a Google Cloud project and enable: Tag Manager API, Google Analytics Admin API, Google Analytics Data API, Google Search Console API, Google Ads API.
-2. Service account: create it, download the JSON key to `~/.secrets/sa.json` (never into this folder), and add its email as a user in GTM and Google Ads (and in Search Console and GA4 if you use that route).
-3. User sign-in (only if you use the `"user"` route for Search Console or GA4): create an OAuth client of type **Desktop app**, save it as `~/.secrets/oauth-client.json`, then run `python scripts/oauth_login.py` and choose your work account. If you use `"service_account"` for both, add the robot's email as a user in Search Console and GA4 instead and skip this step.
+2. Create a service account (IAM & Admin > Service Accounts; no Cloud roles needed) and download a JSON key to `~/.secrets/sa.json`. Never put the key inside this folder. Delete the downloaded copy.
+3. Add the service account's email as a user in each product (table above).
 4. `pip install -r requirements.txt`
-5. Copy `config.example.json` to `config.json`, fill in your IDs and choose the `auth` route per product (`config.json` is git-ignored).
-6. `python scripts/check_access.py` and fix whatever it reports.
+5. Copy `config.example.json` to `config.json` and fill in your IDs (`config.json` is git-ignored).
+6. `python scripts/check_access.py` and fix whatever it reports. A `403` means the robot has not been added to that product yet.
+
+Google Ads usually needs a developer token. In the setup this repo came from, Basic access on the Cloud project worked over REST without one. If you get `DEVELOPER_TOKEN_*` errors, apply for a token and add the `developer-token` header in `scripts/ads_client.py`. Calls through a manager account also need `login-customer-id`.
 
 ## Run from the repo root
 

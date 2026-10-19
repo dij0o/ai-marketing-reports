@@ -21,7 +21,7 @@ def run(svc, dims, mets, flt=None, limit=1000):
 
 
 def main():
-    ga = gc.ga4_data_client()
+    ga = gc.ga4_data()
     out = {"generated": datetime.now(TZ).isoformat(timespec="minutes"), "start": START, "end": END}
     steps = {
         "landing": lambda: run(ga, ["landingPage"], ["sessions", "engagedSessions", "averageSessionDuration", "screenPageViewsPerSession"], ORG),
@@ -36,7 +36,7 @@ def main():
         try: out[k] = fn()
         except Exception as e: out[k + "_error"] = str(e)[:300]
     try:
-        gs = gc.gsc_client()
+        gs = gc.gsc()
         site = gc.CONFIG["search_console"]["property"]
         q = lambda dims: gs.searchanalytics().query(siteUrl=site, body={"startDate": START, "endDate": END, "dimensions": dims, "rowLimit": 1000}).execute().get("rows", [])
         out["gsc_query_page"] = [[*r["keys"], r["clicks"], r["impressions"], r["position"]] for r in q(["query", "page"])]

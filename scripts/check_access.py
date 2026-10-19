@@ -1,5 +1,5 @@
 """Read-only connection test. Run this first: it tells you which product still lacks access.
-Tag Manager and Google Ads use the service account. Search Console and GA4 use whichever route config.json auth selects."""
+All four products use the service account. A 403 means the robot's email has not been added as a user in that product."""
 from googleapiclient.errors import HttpError
 
 import google_clients as gc
@@ -27,12 +27,12 @@ def check_gtm():
 
 
 def check_gsc():
-    sites = gc.gsc_client().sites().list().execute().get("siteEntry", [])
+    sites = gc.gsc().sites().list().execute().get("siteEntry", [])
     print("  Sites visible:", ", ".join(f"{s['siteUrl']} ({s['permissionLevel']})" for s in sites) or "none")
 
 
 def check_ga4():
-    summaries = gc.ga4_admin_client().accountSummaries().list().execute().get("accountSummaries", [])
+    summaries = gc.ga4_admin().accountSummaries().list().execute().get("accountSummaries", [])
     for a in summaries:
         for p in a.get("propertySummaries", []):
             print(f"  {a['displayName']} -> {p['displayName']} ({p['property']})")
@@ -46,10 +46,10 @@ def check_ads():
     print(f"  HTTP {r.status_code}: {r.text[:300]}")
 
 
-CHECKS = [("Tag Manager (service account)", check_gtm),
-          (f"Search Console ({gc._mode('search_console')})", check_gsc),
-          (f"GA4 ({gc._mode('ga4')})", check_ga4),
-          ("Google Ads (service account)", check_ads)]
+CHECKS = [("Tag Manager", check_gtm),
+          ("Search Console", check_gsc),
+          ("GA4", check_ga4),
+          ("Google Ads", check_ads)]
 
 for name, fn in CHECKS:
     print(f"\n[{name}]")

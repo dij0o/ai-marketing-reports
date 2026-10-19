@@ -59,7 +59,7 @@ def keywords_to_pause(s, end):
 
 
 def ga4_week(start, end):
-    svc = gc.ga4_data_client()
+    svc = gc.ga4_data()
     body = {"dateRanges": [{"startDate": str(start), "endDate": str(end)}],
             "dimensions": [{"name": "sessionSourceMedium"}, {"name": "eventName"}], "metrics": [{"name": "eventCount"}],
             "dimensionFilter": {"filter": {"fieldName": "eventName", "inListFilter": {"values": LEAD_EVENTS}}}, "limit": 1000}

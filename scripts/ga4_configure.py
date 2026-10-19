@@ -1,9 +1,8 @@
 """Apply GA4 admin config. Idempotent: skips what already exists.
 Usage: python ga4_configure.py            (dry run, prints planned changes)
        python ga4_configure.py --apply
-Who it runs as depends on config.json auth.ga4:
-  "user"            -> you (sign in with: python scripts/oauth_login.py --ga4-admin); you must be Editor on the property.
-  "service_account" -> the robot, which must be added as Editor on the property."""
+Requires the service account to be Editor on the property.
+"""
 import copy
 import sys
 
@@ -11,7 +10,7 @@ import google_clients as gc
 
 APPLY = "--apply" in sys.argv
 P = f"properties/{gc.CONFIG['ga4']['property_id']}"
-alpha = gc.ga4_admin_alpha_client()
+alpha = gc.ga4_admin_alpha()
 props = alpha.properties()
 
 # parameter name sent on events -> display name in reports (event-scoped custom dimensions)

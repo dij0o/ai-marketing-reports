@@ -34,7 +34,7 @@ def run(svc, dims, mets, flt=None):
 
 
 def main():
-    svc = gc.ga4_data_as_user()
+    svc = gc.ga4_data_client()
     iso = lambda d: f"{d[:4]}-{d[4:6]}-{d[6:]}"
     sess = [[iso(r[0]), r[1], r[2], int(r[3]), int(r[4])] for r in
             run(svc, ["date", "country", "sessionDefaultChannelGroup"], ["sessions", "engagedSessions"])]

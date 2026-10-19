@@ -1,5 +1,5 @@
 """Read-only connection test. Run this first: it tells you which product still lacks access.
-Service account -> Tag Manager and Google Ads.  Your signed-in user token -> Search Console and GA4."""
+Tag Manager and Google Ads use the service account. Search Console and GA4 use whichever route config.json auth selects."""
 from googleapiclient.errors import HttpError
 
 import google_clients as gc
@@ -27,12 +27,12 @@ def check_gtm():
 
 
 def check_gsc():
-    sites = gc.gsc_as_user().sites().list().execute().get("siteEntry", [])
+    sites = gc.gsc_client().sites().list().execute().get("siteEntry", [])
     print("  Sites visible:", ", ".join(f"{s['siteUrl']} ({s['permissionLevel']})" for s in sites) or "none")
 
 
 def check_ga4():
-    summaries = gc.ga4_admin_as_user().accountSummaries().list().execute().get("accountSummaries", [])
+    summaries = gc.ga4_admin_client().accountSummaries().list().execute().get("accountSummaries", [])
     for a in summaries:
         for p in a.get("propertySummaries", []):
             print(f"  {a['displayName']} -> {p['displayName']} ({p['property']})")
@@ -47,8 +47,8 @@ def check_ads():
 
 
 CHECKS = [("Tag Manager (service account)", check_gtm),
-          ("Search Console (your user token)", check_gsc),
-          ("GA4 (your user token)", check_ga4),
+          (f"Search Console ({gc._mode('search_console')})", check_gsc),
+          (f"GA4 ({gc._mode('ga4')})", check_ga4),
           ("Google Ads (service account)", check_ads)]
 
 for name, fn in CHECKS:

@@ -8,23 +8,35 @@ The full walkthrough is in the companion blog post. This repo holds the code.
 
 ## How access works
 
-| Product | How the scripts sign in | Why |
-|---|---|---|
-| Search Console | **Your own Google account** (read-only OAuth token) | Many organisations do not let you add a service account here |
-| GA4 reports | **Your own Google account** (read-only OAuth token) | Same restriction |
-| GA4 settings (optional) | Your own account with `--ga4-admin` (you must be an Editor) | Only needed if you want scripts to change GA4 config |
-| Google Tag Manager | Service account | Edit workspaces and create versions (a human publishes) |
-| Google Ads | Service account | Reporting and Keyword Planner |
+Every product can be reached two ways. You choose per product in `config.json` under `auth`.
 
-If your organisation also blocks service accounts for GTM or Ads, the same user-OAuth pattern works for those with the matching scopes; see the blog post.
+| Route | Identity | Choose it when |
+| --- | --- | --- |
+| `"service_account"` | A robot user with a JSON key | You own the property (or can ask an admin) and can add the robot's email as a user |
+| `"user"` (default) | Your own Google account, signed in once, read-only | Your organisation limits who can add users, so you cannot add a robot |
+
+| Product | Supported routes | Default in this repo |
+| --- | --- | --- |
+| Search Console | `user` or `service_account` | `user` |
+| GA4 (reports and settings) | `user` or `service_account` | `user` |
+| Google Tag Manager | service account | service account |
+| Google Ads | service account | service account |
+
+If you run your own organisation you can create the service account and add it to Search Console and GA4 as well, then set both to `"service_account"`. Everything else works unchanged. A service account is the tidier choice for unattended schedules because it has no browser sign-in to expire.
+
+```json
+"auth": { "search_console": "service_account", "ga4": "service_account" }
+```
+
+For GA4 settings changes (`ga4_configure.py`): with `"user"`, sign in with `python scripts/oauth_login.py --ga4-admin` and be an Editor on the property; with `"service_account"`, add the robot as Editor.
 
 ## Setup
 
 1. Create a Google Cloud project and enable: Tag Manager API, Google Analytics Admin API, Google Analytics Data API, Google Search Console API, Google Ads API.
-2. Service account (GTM and Ads): create it, download the JSON key to `~/.secrets/sa.json` (never into this folder), and add its email as a user in GTM and Google Ads.
-3. User sign-in (Search Console and GA4): create an OAuth client of type **Desktop app**, save it as `~/.secrets/oauth-client.json`, then run `python scripts/oauth_login.py` and choose your work account.
+2. Service account: create it, download the JSON key to `~/.secrets/sa.json` (never into this folder), and add its email as a user in GTM and Google Ads (and in Search Console and GA4 if you use that route).
+3. User sign-in (only if you use the `"user"` route for Search Console or GA4): create an OAuth client of type **Desktop app**, save it as `~/.secrets/oauth-client.json`, then run `python scripts/oauth_login.py` and choose your work account. If you use `"service_account"` for both, add the robot's email as a user in Search Console and GA4 instead and skip this step.
 4. `pip install -r requirements.txt`
-5. Copy `config.example.json` to `config.json` and fill in your IDs (`config.json` is git-ignored).
+5. Copy `config.example.json` to `config.json`, fill in your IDs and choose the `auth` route per product (`config.json` is git-ignored).
 6. `python scripts/check_access.py` and fix whatever it reports.
 
 ## Run from the repo root

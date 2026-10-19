@@ -29,7 +29,7 @@ def ga4_rows(svc, body):
 
 
 def ga4():
-    svc = gc.ga4_data_as_user()
+    svc = gc.ga4_data_client()
     rng = [{"startDate": START, "endDate": END}]
     sessions = ga4_rows(svc, {"dateRanges": rng,
                               "dimensions": [{"name": "date"}, {"name": "sessionDefaultChannelGroup"}],
@@ -52,7 +52,7 @@ def ga4():
 
 
 def gsc():
-    svc = gc.gsc_as_user()
+    svc = gc.gsc_client()
     body = {"startDate": START, "endDate": END, "dimensions": ["date"], "rowLimit": 1000}
     rows = svc.searchanalytics().query(siteUrl=gc.CONFIG["search_console"]["property"], body=body).execute().get("rows", [])
     return {r["keys"][0]: {k: r[k] for k in ("clicks", "impressions", "ctr", "position")} for r in rows}

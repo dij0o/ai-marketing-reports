@@ -16,7 +16,7 @@ SCOPES = {
         "https://www.googleapis.com/auth/tagmanager.publish",   # requested, but the robot still could not publish
         "https://www.googleapis.com/auth/tagmanager.readonly",
     ],
-    "gsc": ["https://www.googleapis.com/auth/webmasters"],
+    "gsc": ["https://www.googleapis.com/auth/webmasters.readonly"],
     "ga4": [
         "https://www.googleapis.com/auth/analytics.edit",
         "https://www.googleapis.com/auth/analytics.readonly",
@@ -98,3 +98,30 @@ def ga4_data():
 def gtm_container_path():
     g = CONFIG["gtm"]
     return f"accounts/{g['account_id']}/containers/{g['container_id']}"
+
+
+# ---- Mode-aware clients: the scripts call these, so one config setting switches the sign-in route ----
+# config.json -> "auth": {"search_console": "user" | "service_account", "ga4": "user" | "service_account"}
+# "user" (default): your own read-only sign-in. Use it when your organisation will not let you add a robot user.
+# "service_account": the robot key. Use it when you own the property and can add the robot as a user.
+def _mode(product):
+    mode = CONFIG.get("auth", {}).get(product, "user")
+    if mode not in ("user", "service_account"):
+        raise ValueError(f'config.json auth.{product} must be "user" or "service_account", got {mode!r}')
+    return mode
+
+
+def gsc_client():
+    return gsc() if _mode("search_console") == "service_account" else gsc_as_user()
+
+
+def ga4_data_client():
+    return ga4_data() if _mode("ga4") == "service_account" else ga4_data_as_user()
+
+
+def ga4_admin_client():
+    return ga4_admin() if _mode("ga4") == "service_account" else ga4_admin_as_user()
+
+
+def ga4_admin_alpha_client():
+    return ga4_admin_alpha() if _mode("ga4") == "service_account" else ga4_admin_alpha_as_user()

@@ -6,7 +6,7 @@ from pathlib import Path
 import google_clients as gc
 
 SITE = gc.CONFIG["search_console"]["property"]
-svc = gc.gsc_as_user()
+svc = gc.gsc_client()
 end = date.today() - timedelta(days=3)  # GSC data lags ~2-3 days
 Path("snapshots").mkdir(exist_ok=True)
 

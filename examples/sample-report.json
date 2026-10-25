@@ -1036,6 +1036,22 @@
         "retrieved": "2026-10-22T09:00:00+00:00",
         "covers": "2026-10-18",
         "note": "Illustrative fixture; not retrieved from a live account."
+      },
+      {
+        "name": "Bing Webmaster Tools",
+        "status": "info",
+        "retrieved": "2026-10-22T09:00:00+00:00",
+        "coversFrom": "2026-10-12",
+        "covers": "2026-10-18",
+        "note": "Illustrative provider-returned traffic dates; current property and sitemap records have separate scope."
+      },
+      {
+        "name": "Yandex Webmaster",
+        "status": "failed",
+        "retrieved": null,
+        "covers": null,
+        "attempted": "2026-10-22T09:00:00+00:00",
+        "note": "Illustrative unavailable response. No successful retrieval or coverage; this is not a live account check or measured zero."
       }
     ]
   },

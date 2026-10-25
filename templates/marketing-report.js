@@ -26,26 +26,20 @@ function freshBar(){var F0=S0.freshness;if(!F0)return null;
  var box=el('div',{cls:'fresh',role:'group','aria-label':'Data freshness'},[el('h3',{text:'Source freshness and coverage'})]);
  var g=el('div',{cls:'fgrid'});var bad=[];
  function ft(s){return s?fmtDate(s.slice(0,10))+' '+s.slice(11,16):'never';}
- F0.sources.forEach(function(s){if(s.status==='failed')bad.push(s.name);var covers=s.covers?'covers to '+fmtDate(s.covers)+(s.partial?' (today so far)':''):'';
-  g.appendChild(el('div',{cls:'fitem '+s.status},[el('i',{cls:s.status}),el('div',{},[el('b',{text:s.name+(s.status==='failed'?' — NOT REFRESHED':s.status==='warn'?' — CHECK':'')}),el('span',{text:'Pulled '+ft(s.retrieved)+(covers?' · '+covers:'')}),el('span',{cls:'note',text:s.note})])]));});
+ F0.sources.forEach(function(s){if(s.status==='failed')bad.push(s.name);var covers=s.covers?'covers '+(s.coversFrom?fmtDate(s.coversFrom)+' to ':'to ')+fmtDate(s.covers)+(s.partial?' (today so far)':''):'';
+  g.appendChild(el('div',{cls:'fitem '+s.status},[el('i',{cls:s.status}),el('div',{},[el('b',{text:s.name+(s.status==='failed'?' — UNAVAILABLE':s.status==='warn'?' — CHECK':'')}),el('span',{text:(s.retrieved?'Pulled '+ft(s.retrieved):'No successful pull')+(covers?' · '+covers:'')}),s.attempted?el('span',{text:'Last attempt '+ft(s.attempted)}):null,el('span',{cls:'note',text:s.note})])]));});
  box.appendChild(g);
- if(bad.length)box.appendChild(el('p',{cls:'fbad',text:'Not refreshed this time: '+bad.join(', ')+'. The numbers that depend on them are from the last good pull shown above, not from now.'}));
+ if(bad.length)box.appendChild(el('p',{cls:'fbad',text:'Unavailable sources: '+bad.join(', ')+'. No fresh values are available; any last successful retrieval and coverage are shown per source.'}));
  var T=S0.today;if(T)box.appendChild(el('p',{cls:'ftoday'},[el('b',{text:'Today so far ('+fmtDate(T.d)+', partial, as of '+T.asOf.slice(11,16)+'): '}),T.sessions+' sessions ('+T.organic+' organic, '+T.paid+' paid), '+T.leads+' lead'+(T.leads===1?'':'s')+', '+T.intent+' lead action'+(T.intent===1?'':'s')+'. Not included in the weekly figures or the rolling 7 days.']));
  box.appendChild(el('p',{cls:'h2note',style:'margin-top:8px',text:'Snapshot built '+ft(F0.runAt)+'. Sources have independent cutoffs; partial days are separate from completed periods.'}));
  return box;}
 
 function filterBar(){var L=S0.slices;if(!L)return null;var cl=countries();
- function setLoc(excl){if(excl===null){F.loc=null;}else{var o={};cl.forEach(function(c){if(excl.indexOf(c[0])<0)o[c[0]]=1;});F.loc=o;}saveF();render();}
- function onlyLoc(list){var o={};list.forEach(function(c){o[c]=1;});F.loc=o;saveF();render();}
- var key=F.loc?Object.keys(F.loc).sort().join('|'):'';
- function keyEx(ex){return cl.map(function(c){return c[0];}).filter(function(c){return ex.indexOf(c)<0;}).sort().join('|');}
- var PRE=[['All locations',F.loc===null,function(){setLoc(null);}],['UAE only',key==='United Arab Emirates',function(){onlyLoc(['United Arab Emirates']);}],['Exclude Pakistan',F.loc!==null&&key===keyEx(['Pakistan']),function(){setLoc(['Pakistan']);}],['Exclude Pakistan and India',F.loc!==null&&key===keyEx(['Pakistan','India']),function(){setLoc(['Pakistan','India']);}]];
- var grp=el('div',{cls:'fgroup'});PRE.forEach(function(p){var b=el('button',{type:'button',cls:'chipb'+(p[1]?' on':''),text:p[0]});b.addEventListener('click',p[2]);grp.appendChild(b);});
  var bot=el('input',{type:'checkbox',id:'f-bots'});bot.checked=F.bots;bot.addEventListener('change',function(){F.bots=bot.checked;saveF();render();});
- var bar=el('div',{cls:'filters',role:'group','aria-label':'Filters'},[el('span',{cls:'fl',text:'Location'}),grp,el('label',{cls:'chk'},[bot,'Exclude flagged low-engagement traffic'])]);
- var det=el('details',{cls:'fdet'});if(F.open)det.setAttribute('open','');det.addEventListener('toggle',function(){F.open=det.open;});det.appendChild(el('summary',{text:'Choose countries'}));
- var list=el('div',{cls:'clist'});cl.forEach(function(c){var cb=el('input',{type:'checkbox'});cb.checked=!F.loc||!!F.loc[c[0]];cb.addEventListener('change',function(){var o={};var boxes=list.querySelectorAll('input');cl.forEach(function(cc,i){if(boxes[i].checked)o[cc[0]]=1;});F.loc=Object.keys(o).length===cl.length?null:o;saveF();render();});list.appendChild(el('label',{},[cb,c[0],el('em',{text:c[1]?comma(c[1])+' sessions':'events only'})]));});
- det.appendChild(list);bar.appendChild(det);
+ var bar=el('div',{cls:'filters',role:'group','aria-label':'Filters'},[el('span',{cls:'fl',text:'Location'})]);
+ var det=el('details',{cls:'fdet'});if(F.open)det.setAttribute('open','');det.addEventListener('toggle',function(){F.open=det.open;});det.appendChild(el('summary',{text:'Choose countries · '+(F.loc?cl.filter(function(c){return !!F.loc[c[0]];}).length+' selected':'All')}));
+ var list=el('div',{cls:'clist'});cl.forEach(function(c){var cb=el('input',{type:'checkbox','aria-label':c[0]});cb.checked=!F.loc||!!F.loc[c[0]];cb.addEventListener('change',function(){var o={};var boxes=list.querySelectorAll('input');cl.forEach(function(cc,i){if(boxes[i].checked)o[cc[0]]=1;});F.loc=Object.keys(o).length===cl.length?null:o;saveF();render();});list.appendChild(el('label',{},[cb,c[0],el('em',{text:c[1]?comma(c[1])+' sessions':'events only'})]));});
+ det.appendChild(list);bar.appendChild(det);bar.appendChild(el('label',{cls:'chk'},[bot,'Exclude flagged low-engagement traffic']));
  var bd=el('details',{cls:'fdet'});if(F.bopen)bd.setAttribute('open','');bd.addEventListener('toggle',function(){F.bopen=bd.open;});bd.appendChild(el('summary',{text:'What counts as bot-like?'}));
  var bl=el('ul',{cls:'botl'});L.bots.filter(function(b){return b.country!=='*';}).forEach(function(b){bl.appendChild(el('li',{text:b.country+', '+b.channel+': '+comma(b.sessions)+' sessions, '+b.engaged+' engaged ('+(b.engaged/b.sessions*100).toFixed(1)+'%)'}));});
  L.bots.filter(function(b){return b.country==='*';}).forEach(function(b){bl.appendChild(el('li',{text:'Whole channel '+b.channel+': '+comma(b.sessions)+' sessions, '+b.engaged+' engaged'}));});

@@ -3,5 +3,7 @@
   "gtm": { "public_id": "GTM-XXXXXXX", "account_id": "000000000", "container_id": "000000000" },
   "search_console": { "property": "sc-domain:example.com" },
   "ga4": { "property_id": "000000000" },
-  "google_ads": { "customer_id": "0000000000" }
+  "google_ads": { "customer_id": "0000000000" },
+  "bing": { "site_url": "https://example.com/" },
+  "yandex": { "site_url": "https://example.com/", "host_id": "" }
 }

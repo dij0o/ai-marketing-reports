@@ -6,6 +6,9 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import google_clients as gc
+import bing_pull
+import yandex_pull
+import webmaster_clients as wc
 
 TZ = timezone(timedelta(hours=0))          # set to your reporting timezone, e.g. timedelta(hours=4)
 START = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--start=")), "2026-01-01")
@@ -66,13 +69,22 @@ def main():
             out[name] = fn()
         except Exception as e:  # keep whatever half succeeded
             out[name + "_error"] = str(e)[:300]
+    # New providers preserve their own datasets, coverage and errors; neither
+    # credential is the Google service-account key. Existing Google fields remain.
+    period = {"start": START, "end": END, "timezone": str(TZ)}
+    for name, collector in (("bing", bing_pull.collect), ("yandex", yandex_pull.collect)):
+        try:
+            out[name] = collector(gc.CONFIG, period)
+        except Exception:
+            out[name] = {"status": "error", "message": "Provider collection failed.", "datasets": {}}
     f = Path("snapshots") / f"report_data_{date.today()}.json"
-    f.write_text(json.dumps(out, indent=1), encoding="utf-8")
+    f.write_text(json.dumps(wc.scrub(out), indent=1), encoding="utf-8")
     g = out.get("ga4", {})
     leads = sum(sum(v.values()) for d in g.values() for e, v in d["events"].items() if e in LEAD)
     print(f"{START} to {END}: {len(g)} GA4 days, {leads} lead events, {len(out.get('gsc', {}))} GSC days. "
           f"Errors: {[k for k in out if k.endswith('_error')] or 'none'}")
     print("wrote", f)
+    print("Webmaster status:", {name: out[name]["status"] for name in ("bing", "yandex")})
 
 
 if __name__ == "__main__":

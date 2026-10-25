@@ -1,0 +1,1571 @@
+{
+  "sample": true,
+  "brand": "Example Property Site",
+  "updated": "2026-10-22",
+  "timezone": "UTC",
+  "indexTotal": null,
+  "weeks": [
+    {
+      "start": "2026-09-28",
+      "days": 7,
+      "leads": 0.6,
+      "intent": 1.0,
+      "sessions": 12.7,
+      "orgLeads": 0.3,
+      "orgIntent": 0.6,
+      "clicks": 5.0,
+      "impressions": 500.0
+    },
+    {
+      "start": "2026-10-05",
+      "days": 7,
+      "leads": 0.4,
+      "intent": 0.7,
+      "sessions": 13.0,
+      "orgLeads": 0.3,
+      "orgIntent": 0.4,
+      "clicks": 6.0,
+      "impressions": 550.0
+    },
+    {
+      "start": "2026-10-12",
+      "days": 7,
+      "leads": 0.6,
+      "intent": 0.9,
+      "sessions": 13.0,
+      "orgLeads": 0.3,
+      "orgIntent": 0.6,
+      "clicks": 7.0,
+      "impressions": 600.0
+    }
+  ],
+  "daily": [
+    {
+      "d": "2026-09-28",
+      "leads": 2,
+      "intent": 2,
+      "sessions": 11,
+      "orgLeads": 1
+    },
+    {
+      "d": "2026-09-29",
+      "leads": 0,
+      "intent": 0,
+      "sessions": 13,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-09-30",
+      "leads": 0,
+      "intent": 1,
+      "sessions": 13,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-01",
+      "leads": 0,
+      "intent": 1,
+      "sessions": 15,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-02",
+      "leads": 1,
+      "intent": 1,
+      "sessions": 11,
+      "orgLeads": 1
+    },
+    {
+      "d": "2026-10-03",
+      "leads": 1,
+      "intent": 0,
+      "sessions": 13,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-04",
+      "leads": 0,
+      "intent": 2,
+      "sessions": 13,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-05",
+      "leads": 0,
+      "intent": 0,
+      "sessions": 15,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-06",
+      "leads": 1,
+      "intent": 1,
+      "sessions": 11,
+      "orgLeads": 1
+    },
+    {
+      "d": "2026-10-07",
+      "leads": 0,
+      "intent": 1,
+      "sessions": 13,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-08",
+      "leads": 1,
+      "intent": 1,
+      "sessions": 13,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-09",
+      "leads": 0,
+      "intent": 0,
+      "sessions": 15,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-10",
+      "leads": 1,
+      "intent": 2,
+      "sessions": 11,
+      "orgLeads": 1
+    },
+    {
+      "d": "2026-10-11",
+      "leads": 0,
+      "intent": 0,
+      "sessions": 13,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-12",
+      "leads": 0,
+      "intent": 1,
+      "sessions": 13,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-13",
+      "leads": 1,
+      "intent": 1,
+      "sessions": 15,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-14",
+      "leads": 1,
+      "intent": 1,
+      "sessions": 11,
+      "orgLeads": 1
+    },
+    {
+      "d": "2026-10-15",
+      "leads": 0,
+      "intent": 0,
+      "sessions": 13,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-16",
+      "leads": 0,
+      "intent": 2,
+      "sessions": 13,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-17",
+      "leads": 0,
+      "intent": 0,
+      "sessions": 15,
+      "orgLeads": 0
+    },
+    {
+      "d": "2026-10-18",
+      "leads": 2,
+      "intent": 1,
+      "sessions": 11,
+      "orgLeads": 1
+    }
+  ],
+  "slices": {
+    "start": "2026-09-28",
+    "end": "2026-10-18",
+    "sessions": [
+      [
+        "2026-09-28",
+        "United Arab Emirates",
+        "Organic Search",
+        8,
+        6
+      ],
+      [
+        "2026-09-28",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-09-28",
+        "United Arab Emirates",
+        "Paid Search",
+        5,
+        3
+      ],
+      [
+        "2026-09-28",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-09-29",
+        "United Arab Emirates",
+        "Organic Search",
+        9,
+        7
+      ],
+      [
+        "2026-09-29",
+        "United Kingdom",
+        "Organic Search",
+        4,
+        2
+      ],
+      [
+        "2026-09-29",
+        "United Arab Emirates",
+        "Paid Search",
+        6,
+        4
+      ],
+      [
+        "2026-09-29",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-09-30",
+        "United Arab Emirates",
+        "Organic Search",
+        10,
+        8
+      ],
+      [
+        "2026-09-30",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-09-30",
+        "United Arab Emirates",
+        "Paid Search",
+        7,
+        3
+      ],
+      [
+        "2026-09-30",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-01",
+        "United Arab Emirates",
+        "Organic Search",
+        11,
+        6
+      ],
+      [
+        "2026-10-01",
+        "United Kingdom",
+        "Organic Search",
+        4,
+        2
+      ],
+      [
+        "2026-10-01",
+        "United Arab Emirates",
+        "Paid Search",
+        5,
+        4
+      ],
+      [
+        "2026-10-01",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-02",
+        "United Arab Emirates",
+        "Organic Search",
+        8,
+        7
+      ],
+      [
+        "2026-10-02",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-10-02",
+        "United Arab Emirates",
+        "Paid Search",
+        6,
+        3
+      ],
+      [
+        "2026-10-02",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-03",
+        "United Arab Emirates",
+        "Organic Search",
+        9,
+        8
+      ],
+      [
+        "2026-10-03",
+        "United Kingdom",
+        "Organic Search",
+        4,
+        2
+      ],
+      [
+        "2026-10-03",
+        "United Arab Emirates",
+        "Paid Search",
+        7,
+        4
+      ],
+      [
+        "2026-10-03",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-04",
+        "United Arab Emirates",
+        "Organic Search",
+        10,
+        6
+      ],
+      [
+        "2026-10-04",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-10-04",
+        "United Arab Emirates",
+        "Paid Search",
+        5,
+        3
+      ],
+      [
+        "2026-10-04",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-05",
+        "United Arab Emirates",
+        "Organic Search",
+        11,
+        7
+      ],
+      [
+        "2026-10-05",
+        "United Kingdom",
+        "Organic Search",
+        4,
+        2
+      ],
+      [
+        "2026-10-05",
+        "United Arab Emirates",
+        "Paid Search",
+        6,
+        4
+      ],
+      [
+        "2026-10-05",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-06",
+        "United Arab Emirates",
+        "Organic Search",
+        8,
+        8
+      ],
+      [
+        "2026-10-06",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-10-06",
+        "United Arab Emirates",
+        "Paid Search",
+        7,
+        3
+      ],
+      [
+        "2026-10-06",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-07",
+        "United Arab Emirates",
+        "Organic Search",
+        9,
+        6
+      ],
+      [
+        "2026-10-07",
+        "United Kingdom",
+        "Organic Search",
+        4,
+        2
+      ],
+      [
+        "2026-10-07",
+        "United Arab Emirates",
+        "Paid Search",
+        5,
+        4
+      ],
+      [
+        "2026-10-07",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-08",
+        "United Arab Emirates",
+        "Organic Search",
+        10,
+        7
+      ],
+      [
+        "2026-10-08",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-10-08",
+        "United Arab Emirates",
+        "Paid Search",
+        6,
+        3
+      ],
+      [
+        "2026-10-08",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-09",
+        "United Arab Emirates",
+        "Organic Search",
+        11,
+        8
+      ],
+      [
+        "2026-10-09",
+        "United Kingdom",
+        "Organic Search",
+        4,
+        2
+      ],
+      [
+        "2026-10-09",
+        "United Arab Emirates",
+        "Paid Search",
+        7,
+        4
+      ],
+      [
+        "2026-10-09",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-10",
+        "United Arab Emirates",
+        "Organic Search",
+        8,
+        6
+      ],
+      [
+        "2026-10-10",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-10-10",
+        "United Arab Emirates",
+        "Paid Search",
+        5,
+        3
+      ],
+      [
+        "2026-10-10",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-11",
+        "United Arab Emirates",
+        "Organic Search",
+        9,
+        7
+      ],
+      [
+        "2026-10-11",
+        "United Kingdom",
+        "Organic Search",
+        4,
+        2
+      ],
+      [
+        "2026-10-11",
+        "United Arab Emirates",
+        "Paid Search",
+        6,
+        4
+      ],
+      [
+        "2026-10-11",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-12",
+        "United Arab Emirates",
+        "Organic Search",
+        10,
+        8
+      ],
+      [
+        "2026-10-12",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-10-12",
+        "United Arab Emirates",
+        "Paid Search",
+        7,
+        3
+      ],
+      [
+        "2026-10-12",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-13",
+        "United Arab Emirates",
+        "Organic Search",
+        11,
+        6
+      ],
+      [
+        "2026-10-13",
+        "United Kingdom",
+        "Organic Search",
+        4,
+        2
+      ],
+      [
+        "2026-10-13",
+        "United Arab Emirates",
+        "Paid Search",
+        5,
+        4
+      ],
+      [
+        "2026-10-13",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-14",
+        "United Arab Emirates",
+        "Organic Search",
+        8,
+        7
+      ],
+      [
+        "2026-10-14",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-10-14",
+        "United Arab Emirates",
+        "Paid Search",
+        6,
+        3
+      ],
+      [
+        "2026-10-14",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-15",
+        "United Arab Emirates",
+        "Organic Search",
+        9,
+        8
+      ],
+      [
+        "2026-10-15",
+        "United Kingdom",
+        "Organic Search",
+        4,
+        2
+      ],
+      [
+        "2026-10-15",
+        "United Arab Emirates",
+        "Paid Search",
+        7,
+        4
+      ],
+      [
+        "2026-10-15",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-16",
+        "United Arab Emirates",
+        "Organic Search",
+        10,
+        6
+      ],
+      [
+        "2026-10-16",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-10-16",
+        "United Arab Emirates",
+        "Paid Search",
+        5,
+        3
+      ],
+      [
+        "2026-10-16",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-17",
+        "United Arab Emirates",
+        "Organic Search",
+        11,
+        7
+      ],
+      [
+        "2026-10-17",
+        "United Kingdom",
+        "Organic Search",
+        4,
+        2
+      ],
+      [
+        "2026-10-17",
+        "United Arab Emirates",
+        "Paid Search",
+        6,
+        4
+      ],
+      [
+        "2026-10-17",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ],
+      [
+        "2026-10-18",
+        "United Arab Emirates",
+        "Organic Search",
+        8,
+        8
+      ],
+      [
+        "2026-10-18",
+        "United Kingdom",
+        "Organic Search",
+        3,
+        2
+      ],
+      [
+        "2026-10-18",
+        "United Arab Emirates",
+        "Paid Search",
+        7,
+        3
+      ],
+      [
+        "2026-10-18",
+        "Singapore",
+        "Direct",
+        8,
+        0
+      ]
+    ],
+    "events": [
+      [
+        "2026-09-28",
+        "United Arab Emirates",
+        "Organic Search",
+        "generate_lead",
+        1
+      ],
+      [
+        "2026-09-28",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-09-28",
+        "United Arab Emirates",
+        "Paid Search",
+        "generate_lead",
+        1
+      ],
+      [
+        "2026-09-28",
+        "United Arab Emirates",
+        "Paid Search",
+        "phone_click",
+        1
+      ],
+      [
+        "2026-09-30",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-10-01",
+        "United Arab Emirates",
+        "Paid Search",
+        "phone_click",
+        1
+      ],
+      [
+        "2026-10-02",
+        "United Arab Emirates",
+        "Organic Search",
+        "generate_lead",
+        1
+      ],
+      [
+        "2026-10-02",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-10-03",
+        "United Arab Emirates",
+        "Paid Search",
+        "generate_lead",
+        1
+      ],
+      [
+        "2026-10-04",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-10-04",
+        "United Arab Emirates",
+        "Paid Search",
+        "phone_click",
+        1
+      ],
+      [
+        "2026-10-06",
+        "United Arab Emirates",
+        "Organic Search",
+        "generate_lead",
+        1
+      ],
+      [
+        "2026-10-06",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-10-07",
+        "United Arab Emirates",
+        "Paid Search",
+        "phone_click",
+        1
+      ],
+      [
+        "2026-10-08",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-10-08",
+        "United Arab Emirates",
+        "Paid Search",
+        "generate_lead",
+        1
+      ],
+      [
+        "2026-10-10",
+        "United Arab Emirates",
+        "Organic Search",
+        "generate_lead",
+        1
+      ],
+      [
+        "2026-10-10",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-10-10",
+        "United Arab Emirates",
+        "Paid Search",
+        "phone_click",
+        1
+      ],
+      [
+        "2026-10-12",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-10-13",
+        "United Arab Emirates",
+        "Paid Search",
+        "generate_lead",
+        1
+      ],
+      [
+        "2026-10-13",
+        "United Arab Emirates",
+        "Paid Search",
+        "phone_click",
+        1
+      ],
+      [
+        "2026-10-14",
+        "United Arab Emirates",
+        "Organic Search",
+        "generate_lead",
+        1
+      ],
+      [
+        "2026-10-14",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-10-16",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-10-16",
+        "United Arab Emirates",
+        "Paid Search",
+        "phone_click",
+        1
+      ],
+      [
+        "2026-10-18",
+        "United Arab Emirates",
+        "Organic Search",
+        "generate_lead",
+        1
+      ],
+      [
+        "2026-10-18",
+        "United Arab Emirates",
+        "Organic Search",
+        "whatsapp_click",
+        1
+      ],
+      [
+        "2026-10-18",
+        "United Arab Emirates",
+        "Paid Search",
+        "generate_lead",
+        1
+      ]
+    ],
+    "leadEvents": [
+      "generate_lead"
+    ],
+    "rule": {
+      "min_sessions": 15,
+      "max_engaged": 0.08
+    },
+    "bots": [
+      {
+        "country": "Singapore",
+        "channel": "Direct",
+        "sessions": 168,
+        "engaged": 0
+      }
+    ]
+  },
+  "notes": {
+    "moved": "All figures in this public example are fictional. The layout is adapted from a supplied report.\nSearch clicks, GA4 sessions and Ads clicks describe different measures.\nThe optional low-engagement filter changes only the sections named beside the controls.",
+    "decisions": "Review enquiry event definitions before treating events as qualified prospects.\nInspect query intent and landing pages together before changing advertising.\nKeep each source cutoff visible when comparing periods."
+  },
+  "freshness": {
+    "runAt": "2026-10-22T09:00:00+00:00",
+    "sources": [
+      {
+        "name": "GA4",
+        "status": "info",
+        "retrieved": "2026-10-22T09:00:00+00:00",
+        "covers": "2026-10-18",
+        "note": "Illustrative fixture; not retrieved from a live account."
+      },
+      {
+        "name": "Search Console",
+        "status": "info",
+        "retrieved": "2026-10-22T09:00:00+00:00",
+        "covers": "2026-10-18",
+        "note": "Illustrative fixture; not retrieved from a live account."
+      },
+      {
+        "name": "Google Ads",
+        "status": "info",
+        "retrieved": "2026-10-22T09:00:00+00:00",
+        "covers": "2026-10-18",
+        "note": "Illustrative fixture; not retrieved from a live account."
+      },
+      {
+        "name": "Keyword analysis",
+        "status": "info",
+        "retrieved": "2026-10-22T09:00:00+00:00",
+        "covers": "2026-10-18",
+        "note": "Illustrative fixture; not retrieved from a live account."
+      },
+      {
+        "name": "Bing Webmaster Tools",
+        "status": "info",
+        "retrieved": "2026-10-22T09:00:00+00:00",
+        "coversFrom": "2026-10-12",
+        "covers": "2026-10-18",
+        "note": "Illustrative provider-returned traffic dates; current property and sitemap records have separate scope."
+      },
+      {
+        "name": "Yandex Webmaster",
+        "status": "failed",
+        "retrieved": null,
+        "covers": null,
+        "attempted": "2026-10-22T09:00:00+00:00",
+        "note": "Illustrative unavailable response. No successful retrieval or coverage; this is not a live account check or measured zero."
+      }
+    ]
+  },
+  "visuals": {
+    "asOf": "2026-10-22",
+    "keywords": {
+      "built": "2026-10-22",
+      "addressable": 48000,
+      "groups": [
+        {
+          "label": "Projects with no page",
+          "vol": 12000,
+          "kind": "gap"
+        },
+        {
+          "label": "Developer names",
+          "vol": 18000,
+          "kind": "name"
+        },
+        {
+          "label": "Community names",
+          "vol": 10000,
+          "kind": "name"
+        },
+        {
+          "label": "Guides and property types",
+          "vol": 8000,
+          "kind": "generic"
+        }
+      ],
+      "nameShare": 83,
+      "gapProjects": 3,
+      "gapVol": 12000,
+      "top": [
+        {
+          "name": "Harbour One",
+          "dev": "Example Developer A",
+          "vol": 5000
+        },
+        {
+          "name": "Garden Court",
+          "dev": "Example Developer A",
+          "vol": 4000
+        },
+        {
+          "name": "Park House",
+          "dev": "Example Developer B",
+          "vol": 3000
+        }
+      ],
+      "devs": [
+        {
+          "dev": "Example Developer A",
+          "vol": 9000,
+          "projects": 2
+        },
+        {
+          "dev": "Example Developer B",
+          "vol": 3000,
+          "projects": 1
+        }
+      ],
+      "newPageKeywords": 3,
+      "newPageVol": 12000,
+      "coveredVol": 36000
+    },
+    "journey": {
+      "from": "2026-09-28",
+      "to": "2026-10-18",
+      "sessions": 271,
+      "engaged": 189,
+      "landing": [
+        {
+          "label": "Homepage",
+          "n": 90
+        },
+        {
+          "label": "Guides and articles",
+          "n": 70
+        },
+        {
+          "label": "Property pages",
+          "n": 80
+        },
+        {
+          "label": "Contact",
+          "n": 31
+        }
+      ],
+      "funnel": [
+        {
+          "label": "Organic sessions",
+          "n": 271
+        },
+        {
+          "label": "Engaged sessions",
+          "n": 189
+        },
+        {
+          "label": "Form opens (events)",
+          "n": 18
+        },
+        {
+          "label": "Contact clicks (events)",
+          "n": 11
+        },
+        {
+          "label": "Listing views (events)",
+          "n": 25
+        },
+        {
+          "label": "Form starts (events)",
+          "n": 8
+        },
+        {
+          "label": "Recorded lead events",
+          "n": 6
+        }
+      ],
+      "entry": [
+        {
+          "from": "Google",
+          "to": "/",
+          "n": 40
+        },
+        {
+          "from": "Other search",
+          "to": "/properties/harbour-one/",
+          "n": 12
+        }
+      ],
+      "onward": [
+        {
+          "from": "/",
+          "to": "/contact/",
+          "n": 15
+        },
+        {
+          "from": "/guides/",
+          "to": "/properties/harbour-one/",
+          "n": 8
+        }
+      ],
+      "devices": {
+        "desktop": 150,
+        "mobile": 121
+      },
+      "gscClicks": 126,
+      "brandClicks": 12,
+      "visibleClicks": 20,
+      "leadPage": "/properties/harbour-one/",
+      "leadEvents": 6,
+      "leadUsers": 6
+    },
+    "paid": {
+      "currency": "USD",
+      "live": true,
+      "manual": "Illustrative advertising fixture; no live campaigns or account identifiers.",
+      "start": "2026-09-28",
+      "budget": 100,
+      "enabled": 2,
+      "pulled": "2026-10-22T09:00:00+00:00",
+      "campaigns": [
+        {
+          "name": "Example campaign A",
+          "status": "ENABLED",
+          "start": "2026-09-28",
+          "budget": 60,
+          "spend": 241.92,
+          "clicks": 100,
+          "impr": 1500,
+          "ctr": 6.666666666666667,
+          "cpc": 2.42
+        },
+        {
+          "name": "Example campaign B",
+          "status": "ENABLED",
+          "start": "2026-09-28",
+          "budget": 40,
+          "spend": 161.28,
+          "clicks": 68,
+          "impr": 960,
+          "ctr": 7.083333333333333,
+          "cpc": 2.37
+        }
+      ],
+      "weeks": [
+        {
+          "start": "2026-09-28",
+          "clicks": 55,
+          "sessions": 41,
+          "leads": 2,
+          "intent": 3,
+          "spend": 132.0,
+          "impr": 808,
+          "conv": 2
+        },
+        {
+          "start": "2026-10-05",
+          "clicks": 56,
+          "sessions": 42,
+          "leads": 1,
+          "intent": 2,
+          "spend": 134.4,
+          "impr": 820,
+          "conv": 1
+        },
+        {
+          "start": "2026-10-12",
+          "clicks": 57,
+          "sessions": 43,
+          "leads": 2,
+          "intent": 2,
+          "spend": 136.8,
+          "impr": 832,
+          "conv": 2
+        }
+      ],
+      "daily": [
+        {
+          "d": "2026-09-28",
+          "impr": 100,
+          "clicks": 7,
+          "cost": 16.8,
+          "sessions": 5,
+          "engaged": 3,
+          "leads": 1,
+          "intent": 1
+        },
+        {
+          "d": "2026-09-29",
+          "impr": 112,
+          "clicks": 8,
+          "cost": 19.2,
+          "sessions": 6,
+          "engaged": 4,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-09-30",
+          "impr": 124,
+          "clicks": 9,
+          "cost": 21.6,
+          "sessions": 7,
+          "engaged": 3,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-01",
+          "impr": 136,
+          "clicks": 7,
+          "cost": 16.8,
+          "sessions": 5,
+          "engaged": 4,
+          "leads": 0,
+          "intent": 1
+        },
+        {
+          "d": "2026-10-02",
+          "impr": 100,
+          "clicks": 8,
+          "cost": 19.2,
+          "sessions": 6,
+          "engaged": 3,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-03",
+          "impr": 112,
+          "clicks": 9,
+          "cost": 21.6,
+          "sessions": 7,
+          "engaged": 4,
+          "leads": 1,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-04",
+          "impr": 124,
+          "clicks": 7,
+          "cost": 16.8,
+          "sessions": 5,
+          "engaged": 3,
+          "leads": 0,
+          "intent": 1
+        },
+        {
+          "d": "2026-10-05",
+          "impr": 136,
+          "clicks": 8,
+          "cost": 19.2,
+          "sessions": 6,
+          "engaged": 4,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-06",
+          "impr": 100,
+          "clicks": 9,
+          "cost": 21.6,
+          "sessions": 7,
+          "engaged": 3,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-07",
+          "impr": 112,
+          "clicks": 7,
+          "cost": 16.8,
+          "sessions": 5,
+          "engaged": 4,
+          "leads": 0,
+          "intent": 1
+        },
+        {
+          "d": "2026-10-08",
+          "impr": 124,
+          "clicks": 8,
+          "cost": 19.2,
+          "sessions": 6,
+          "engaged": 3,
+          "leads": 1,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-09",
+          "impr": 136,
+          "clicks": 9,
+          "cost": 21.6,
+          "sessions": 7,
+          "engaged": 4,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-10",
+          "impr": 100,
+          "clicks": 7,
+          "cost": 16.8,
+          "sessions": 5,
+          "engaged": 3,
+          "leads": 0,
+          "intent": 1
+        },
+        {
+          "d": "2026-10-11",
+          "impr": 112,
+          "clicks": 8,
+          "cost": 19.2,
+          "sessions": 6,
+          "engaged": 4,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-12",
+          "impr": 124,
+          "clicks": 9,
+          "cost": 21.6,
+          "sessions": 7,
+          "engaged": 3,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-13",
+          "impr": 136,
+          "clicks": 7,
+          "cost": 16.8,
+          "sessions": 5,
+          "engaged": 4,
+          "leads": 1,
+          "intent": 1
+        },
+        {
+          "d": "2026-10-14",
+          "impr": 100,
+          "clicks": 8,
+          "cost": 19.2,
+          "sessions": 6,
+          "engaged": 3,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-15",
+          "impr": 112,
+          "clicks": 9,
+          "cost": 21.6,
+          "sessions": 7,
+          "engaged": 4,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-16",
+          "impr": 124,
+          "clicks": 7,
+          "cost": 16.8,
+          "sessions": 5,
+          "engaged": 3,
+          "leads": 0,
+          "intent": 1
+        },
+        {
+          "d": "2026-10-17",
+          "impr": 136,
+          "clicks": 8,
+          "cost": 19.2,
+          "sessions": 6,
+          "engaged": 4,
+          "leads": 0,
+          "intent": 0
+        },
+        {
+          "d": "2026-10-18",
+          "impr": 100,
+          "clicks": 9,
+          "cost": 21.6,
+          "sessions": 7,
+          "engaged": 3,
+          "leads": 1,
+          "intent": 0
+        }
+      ],
+      "totals": {
+        "spend": 403.2,
+        "clicks": 168,
+        "impr": 2460,
+        "ctr": 6.829268292682928,
+        "cpc": 2.4,
+        "sessions": 126,
+        "engaged": 73,
+        "leads": 5,
+        "cpl": 80.64,
+        "intent": 7
+      },
+      "checks": [
+        {
+          "s": "warn",
+          "t": "Example check: reconcile conversions",
+          "d": "Recorded events should be compared with accepted enquiries before being called qualified leads."
+        }
+      ],
+      "terms": [
+        {
+          "term": "example harbour apartments",
+          "clicks": 7,
+          "impressions": 90,
+          "cost": 16.8,
+          "conversions": 1
+        },
+        {
+          "term": "example property guide",
+          "clicks": 5,
+          "impressions": 75,
+          "cost": 12,
+          "conversions": 0
+        }
+      ]
+    },
+    "risks": [
+      {
+        "id": "quality",
+        "level": "watch",
+        "title": "A low-engagement segment needs review",
+        "big": "168",
+        "bigNote": "illustrative sessions in the flagged segment",
+        "text": "The example Singapore Direct segment has no engaged sessions. Low engagement alone does not prove bots. Use the optional filter to compare recorded activity.",
+        "viz": {
+          "type": "none"
+        }
+      },
+      {
+        "id": "ctr",
+        "level": "watch",
+        "title": "Search click-through by week",
+        "big": "1.0%",
+        "bigNote": "illustrative observed rate",
+        "text": "Observed search clicks divided by impressions, with no assumed benchmark.",
+        "viz": {
+          "type": "ctr"
+        }
+      }
+    ]
+  },
+  "webmasters": [
+    {
+      "name": "Bing Webmaster Tools",
+      "status": "Illustrative connected source",
+      "note": "Fictional provider-returned dates. These clicks are not added to Google clicks or GA4 sessions.",
+      "rows": [
+        {
+          "date": "2026-10-12",
+          "clicks": 6,
+          "impressions": 180
+        },
+        {
+          "date": "2026-10-18",
+          "clicks": 8,
+          "impressions": 210
+        }
+      ]
+    },
+    {
+      "name": "Yandex Webmaster",
+      "status": "Illustrative unavailable source",
+      "note": "This demonstrates how an unavailable response is shown. It is not a measured zero or a live check of an account.",
+      "rows": []
+    }
+  ]
+}

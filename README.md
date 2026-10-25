@@ -12,6 +12,32 @@ The full walkthrough is in the companion blog post. This repo holds the code.
 
 > **Nothing here contains credentials.** Keys, tokens, your IDs and generated data are git-ignored. Run `python scripts/scan_for_private_data.py` before every push.
 
+## Easiest route: ask your AI assistant to set it up
+
+You do not have to work through every settings screen yourself. Use an AI assistant
+with browser access through its application's browser or a browser extension, and
+ask it to carry out the setup. You create or sign into the necessary accounts and
+handle any identity, consent or verification prompts; the assistant can then work
+through the configuration and check the results wherever its tools support it.
+
+Give it this repository and your site, then start with:
+
+```text
+Open your browser and help me set up the reporting tools in this repository
+for my website. I will create or sign into the necessary accounts when asked.
+Read the setup and event-customisation guides, inspect my site's existing
+events, and configure GA4, Search Console, Tag Manager, Google Ads API access
+for keyword research, Bing Webmaster Tools and Yandex Webmaster.
+Adapt the scripts and sample report to my actual event definitions. Keep
+credentials local and out of chat/Git. Set up reporting without launching
+paid campaigns. Verify each connection and event, then generate the report
+and clearly identify anything still waiting for provider approval or data.
+```
+
+See [Browser-assisted setup](docs/webmaster-reporting.md#browser-assisted-setup)
+for the division of work. Browser and local-file capabilities vary by assistant;
+an assistant without local access can prepare the files and commands for you to run.
+
 ## How access works
 
 The Google scripts use a **service account** with a local JSON key and separate product-level permissions. Bing uses its own Webmaster API key from `BING_API_KEY`. Yandex uses an OAuth token from `YANDEX_TOKEN`. Neither new provider uses the Google identity. Keep all credentials outside Git; only non-secret site/property settings belong in local `config.json`.

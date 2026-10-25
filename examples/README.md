@@ -19,6 +19,10 @@ establish unique qualified prospects.
 
 ## Use your own events
 
+You can ask an assistant with browser access to handle the provider configuration
+and adapt this report for you while you create or sign into the necessary accounts.
+Start with the README's [browser-assisted setup prompt](../README.md#easiest-route-ask-your-ai-assistant-to-set-it-up).
+
 Follow the [event customisation guide](../docs/customizing-events.md) before
 replacing the sample data. Define your site's outcomes, intent actions and content
 interest, align the website/GTM/GA4 names and parameters, then update the Python

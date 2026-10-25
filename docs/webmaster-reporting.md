@@ -6,6 +6,49 @@ collect into private files, then let a person or assistant inspect the evidence.
 The new Bing and Yandex Python collectors make those integrations available here.
 They do not require a browser login page on your website or a visitor tracking tag.
 
+## Browser-assisted setup
+
+The manual steps below also serve as instructions for your AI assistant. If it has
+an in-application browser or browser extension, ask it to open the provider sites
+and perform the setup for you. Give it this repository, your website URL and, where
+available, access to your site's source files. It should read these instructions
+and the [event customisation guide](customizing-events.md) before configuring anything.
+
+Your main role is to create or sign into the necessary Google, Microsoft/Bing and
+Yandex accounts, and complete identity checks, consent prompts and any verification
+steps requiring you. Once signed in, let the assistant navigate the settings,
+identify the correct properties, configure access and work through the reporting
+setup. Use the assistant's supported browser sign-in handoff rather than sharing
+passwords in chat.
+
+An assistant with both browser and local-file access can also adapt the scripts,
+create local configuration, put credentials in private storage, run the access
+checks and generate the report. A browser extension by itself may not provide local
+file or command access; in that case the assistant can prepare changes and commands
+for you to save or run.
+
+Ask it to work through these concrete outcomes:
+
+1. Reuse or create the right analytics/search properties and verify site ownership.
+2. Inspect your implemented events, agree their meanings with you, and align GTM,
+   GA4 definitions, script queries and report labels.
+3. Configure Google API/service-account access, Bing's API key and Yandex's OAuth
+   access. Include the Google Ads branding/Basic access process when keyword
+   planning requires it.
+4. Keep keys and tokens in local private storage and configure the scripts without
+   printing secrets or committing account data.
+5. Verify provider responses and event receipt, generate the report, and explain
+   which connections, approvals or datasets remain incomplete.
+
+Tell it that this is a reporting setup, so it should not create ad spend or publish
+your site as part of the task. It can prepare configuration changes for your review;
+GTM publication remains the human-reviewed step described in this repository.
+Provider approval and data processing still follow the providers' own processes;
+an assistant completing a form is not evidence that access has been granted.
+
+The README includes a [copyable starter prompt](../README.md#easiest-route-ask-your-ai-assistant-to-set-it-up).
+You can then follow the manual sections below to understand or check what it did.
+
 ## Ownership is separate from reporting access
 
 First add your site to the appropriate Webmaster portal and complete its ownership

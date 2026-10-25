@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Example Property Site | Marketing report sample</title><style id="css">
+:root{--bg:#F2F4F3;--surface:#FFFFFF;--ink:#14232B;--muted:#5B6B73;--line:#D9DFE1;--teal:#0E7A6B;--teal-soft:#D5ECE7;--secondary:#8D9BA2;--gold:#B8871F;--gold-soft:#F5E9CC;--risk:#B8442C;--risk-soft:#F6DDD6;--warn:#A06C0C;--warn-soft:#F6EACB;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E171B;--surface:#15222A;--ink:#E6EDEF;--muted:#93A3AA;--line:#26353C;--teal:#3BB39F;--teal-soft:#173A35;--secondary:#6E7F87;--gold:#E0B552;--gold-soft:#3A3120;--risk:#E2735B;--risk-soft:#3D2420;--warn:#D9A53A;--warn-soft:#3A3020;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E171B;--surface:#15222A;--ink:#E6EDEF;--muted:#93A3AA;--line:#26353C;--teal:#3BB39F;--teal-soft:#173A35;--secondary:#6E7F87;--gold:#E0B552;--gold-soft:#3A3120;--risk:#E2735B;--risk-soft:#3D2420;--warn:#D9A53A;--warn-soft:#3A3020;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.5;font-variant-numeric:tabular-nums}
+main{max-width:1080px;margin:0 auto;padding:32px 20px 64px}
+h1,h2,h3,p{margin:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.brand{font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+.brand span{font-weight:500;color:var(--muted)}
+.wk{color:var(--muted);font-size:.95rem}
+.banner{margin-top:20px;padding:12px 16px;border-radius:10px;background:var(--warn-soft);color:var(--ink);font-size:.93rem;border-left:4px solid var(--warn)}
+.answer{padding:40px 0 8px;max-width:30ch}
+.answer h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.03em;font-weight:700}
+.answer h1 b{font-weight:800}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:6px 14px;border-radius:999px;font-weight:600;font-size:.95rem}
+.status::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.s-on{background:var(--teal-soft);color:var(--teal)}.s-risk{background:var(--warn-soft);color:var(--warn)}.s-behind{background:var(--risk-soft);color:var(--risk)}
+.sub{margin-top:16px;color:var(--muted);max-width:62ch}
+.sub strong{color:var(--ink);font-weight:600}
+section{margin-top:44px}
+h2{font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
+.h2note{color:var(--muted);font-size:.93rem;margin-top:4px;max-width:66ch}
+.chart{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 8px 4px;overflow-x:auto}
+.chart svg{display:block;width:100%;height:auto}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.86rem;color:var(--muted);padding:4px 12px 10px}
+.legend i{display:inline-block;width:18px;height:0;border-top:3px solid;vertical-align:middle;margin-right:6px}
+.grid2{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;margin-top:44px}
+.grid2 section{margin-top:0}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+.chain{list-style:none;margin:16px 0 0;padding:0;position:relative}
+.chain li{position:relative;padding:14px 0 14px 28px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:baseline}
+.chain li::before{content:"";position:absolute;left:6px;top:20px;width:9px;height:9px;border-radius:50%;background:var(--surface);border:2px solid var(--teal)}
+.chain li:first-child::before{background:var(--teal)}
+.chain::before{content:"";position:absolute;left:10px;top:24px;bottom:24px;width:1px;background:var(--line)}
+.chain .nm{font-weight:600}
+.chain .ex{grid-column:1;color:var(--muted);font-size:.86rem}
+.chain .val{grid-row:1/3;grid-column:2;text-align:right;font-size:1.35rem;font-weight:700;letter-spacing:-.01em}
+.chain .val small{display:block;font-size:.8rem;font-weight:500}
+.up{color:var(--teal)}.down{color:var(--risk)}.flat{color:var(--muted)}
+.conv{display:flex;align-items:stretch;gap:0;margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.conv div{flex:1;padding:16px}
+.conv div+div{border-left:1px solid var(--line)}
+.conv b{display:block;font-size:1.5rem;letter-spacing:-.02em}
+.conv span{color:var(--muted);font-size:.85rem}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:16px}
+@media (max-width:820px){.notes{grid-template-columns:1fr}}
+.notes div{border-top:3px solid var(--line);padding-top:12px}
+.notes .n-risk{border-color:var(--risk)}.notes .n-dec{border-color:var(--gold)}.notes .n-move{border-color:var(--teal)}
+.notes h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.notes p{white-space:pre-wrap;color:var(--ink);font-size:.95rem}
+.notes p.empty{color:var(--muted)}
+details.edit{margin-top:56px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+details.edit summary{cursor:pointer;padding:16px 20px;font-weight:700}
+.editbody{padding:0 20px 20px}
+.tblwrap{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;font-size:.88rem;min-width:860px;width:100%}
+th{text-align:left;font-weight:600;color:var(--muted);padding:6px 6px;border-bottom:1px solid var(--line);vertical-align:bottom}
+td{padding:4px 6px;border-bottom:1px solid var(--line)}
+td.cur{font-weight:700}
+input,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:5px 7px;width:100%}
+input[type=number]{max-width:110px}
+textarea{min-height:90px;resize:vertical}
+.rates{display:flex;gap:20px;flex-wrap:wrap;margin:16px 0}
+.rates label,.ntext label{display:block;font-size:.86rem;color:var(--muted);margin-bottom:4px}
+.ntext{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
+@media (max-width:820px){.ntext{grid-template-columns:1fr}}
+.actions{display:flex;gap:14px;align-items:center;margin-top:18px;flex-wrap:wrap}
+button{font:inherit;font-weight:600;border:0;border-radius:8px;padding:10px 18px;background:var(--teal);color:#fff;cursor:pointer}
+button:disabled{opacity:.6;cursor:default}
+.msg{font-size:.9rem;color:var(--muted)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.foot{margin-top:40px;color:var(--muted);font-size:.85rem}main{max-width:none;padding:32px clamp(20px,3vw,48px) 64px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:16px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.stat b{display:block;font-size:1.7rem;letter-spacing:-.02em;line-height:1.15}
+.stat span{color:var(--muted);font-size:.85rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.card h3{font-size:1rem;font-weight:700}
+.card .cnote{color:var(--muted);font-size:.86rem;margin:2px 0 12px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:18px;margin-top:16px}
+@media (max-width:480px){.cols{grid-template-columns:1fr}}
+.stack{display:flex;height:34px;border-radius:8px;overflow:hidden;margin-top:6px;gap:2px}
+.stack i{display:block;height:100%}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:6px 18px;margin-top:12px;font-size:.88rem}
+.keys span{display:flex;align-items:center;gap:8px}
+.keys em{font-style:normal;color:var(--muted);margin-left:auto;white-space:nowrap}
+.sw{width:11px;height:11px;border-radius:3px;flex:none}
+.brow{display:grid;grid-template-columns:minmax(120px,190px) 1fr auto;gap:10px;align-items:center;padding:5px 0;font-size:.9rem}
+.brow .lb small{color:var(--muted);margin-left:6px}
+.brow .tr{background:var(--bg);border-radius:5px;height:16px;overflow:hidden}
+.brow .tr i{display:block;height:100%;border-radius:5px}
+.brow .vl{font-weight:600;min-width:3.2em;text-align:right}
+.risks{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:18px;margin-top:16px}
+@media (max-width:520px){.risks{grid-template-columns:1fr}}
+.rk{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--line);border-radius:14px;padding:16px 18px}
+.rk.high{border-top-color:var(--risk)}.rk.med{border-top-color:var(--warn)}.rk.watch{border-top-color:var(--teal)}
+.chip{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 9px;border-radius:999px}
+.high .chip{background:var(--risk-soft);color:var(--risk)}.med .chip{background:var(--warn-soft);color:var(--warn)}.watch .chip{background:var(--teal-soft);color:var(--teal)}
+.rk h3{font-size:1.05rem;margin:8px 0 2px}
+.rk .big{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0 10px}
+.rk .big b{font-size:2rem;letter-spacing:-.02em;line-height:1.1}
+.rk .big span{color:var(--muted);font-size:.88rem}
+.rk p{font-size:.9rem;margin-top:12px}
+.cols-viz{display:flex;align-items:flex-end;gap:8px;height:96px;padding-top:6px}
+.cv{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;min-width:0}
+.cv .stk{width:100%;max-width:34px;display:flex;flex-direction:column-reverse;border-radius:4px 4px 0 0;overflow:hidden;min-height:2px;background:var(--line)}
+.cv .stk i{display:block;width:100%}
+.cv small{font-size:.72rem;color:var(--muted);margin-top:4px;white-space:nowrap}
+.cv em{font-style:normal;font-size:.75rem;font-weight:600;margin-bottom:2px}
+.leg2{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin-top:10px}
+.leg2 span{display:flex;align-items:center;gap:6px}
+.ctrrow{display:grid;grid-template-columns:52px 1fr 52px;gap:8px;align-items:center;font-size:.82rem;padding:2px 0}
+.ctrrow .tr{position:relative;background:var(--bg);height:14px;border-radius:4px}
+.ctrrow .tr i{display:block;height:100%;background:var(--risk);border-radius:4px}
+.ctrrow .tr u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--gold);text-decoration:none}
+.flow{display:grid;grid-template-columns:1fr 24px minmax(0,1.1fr);gap:6px 10px;align-items:center;font-size:.88rem;padding:4px 0}
+.flow .pth{word-break:break-all}
+.flow .ar{color:var(--muted);text-align:center}
+.flow .ct{font-weight:700}
+.pth2{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:5px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+.pth2:last-child{border-bottom:0}
+.pth2 b{white-space:nowrap}
+.insights{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.insights li{background:var(--gold-soft);border-left:4px solid var(--gold);border-radius:8px;padding:10px 14px;font-size:.93rem}
+.caveat{color:var(--muted);font-size:.84rem;margin-top:12px}
+.launch{margin-top:16px;padding:14px 18px;border-radius:12px;background:var(--gold-soft);border-left:4px solid var(--gold);font-size:.95rem}
+.launch b{font-weight:700}
+.t2{width:100%;min-width:0;border-collapse:collapse;font-size:.88rem}
+.t2 th{font-weight:600;color:var(--muted);text-align:right;padding:6px 8px;border-bottom:1px solid var(--line)}
+.t2 th:first-child,.t2 td:first-child{text-align:left}
+.t2 td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right}
+.t2 tr:last-child td{border-bottom:0}
+.t2 .st{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:1px 8px;border-radius:999px;background:var(--warn-soft);color:var(--warn)}
+.t2 .st.on{background:var(--teal-soft);color:var(--teal)}
+.tw{overflow-x:auto}
+.ck{list-style:none;margin:0;padding:0}
+.ck li{display:grid;grid-template-columns:20px 140px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.9rem;align-items:start}
+.ck li:last-child{border-bottom:0}
+.ck .dot{width:12px;height:12px;border-radius:50%;margin-top:5px}
+.ck .ok{background:var(--teal)}.ck .warn{background:var(--warn)}.ck .bad{background:var(--risk)}
+.ck b{font-weight:600}
+.ck span{color:var(--muted)}
+@media (max-width:560px){.ck li{grid-template-columns:20px 1fr}.ck li span{grid-column:2}}
+.pair{display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:10px;align-items:center;padding:6px 0;font-size:.9rem}
+.pair .bars{display:grid;gap:4px}
+.pair .bars div{display:grid;grid-template-columns:1fr 64px;gap:8px;align-items:center}
+.pair .tr{background:var(--bg);border-radius:5px;height:14px;overflow:hidden}
+.pair .tr i{display:block;height:100%;border-radius:5px}
+.pair .bars b{font-size:.85rem;text-align:right}
+.filters{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:18px;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.filters .fl{font-weight:700;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.fgroup{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chipb{background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:5px 12px;border-radius:999px;font-weight:600;font-size:.85rem}
+.chipb.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.filters label.chk{display:flex;gap:8px;align-items:center;font-size:.9rem;cursor:pointer}
+.filters input[type=checkbox]{width:auto}
+.fsum{flex-basis:100%;color:var(--muted);font-size:.85rem}
+.fsum b{color:var(--ink)}
+.fdet{flex-basis:100%}
+.fdet summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--teal)}
+.clist{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px 16px;margin-top:10px;font-size:.88rem}
+.clist label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.clist em{font-style:normal;color:var(--muted);margin-left:auto}
+.botl{margin:10px 0 0;padding-left:18px;font-size:.88rem;color:var(--muted)}
+.fresh{margin-top:16px;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.fresh h3{font-size:.8rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:8px 18px}
+.fitem{display:grid;grid-template-columns:12px 1fr;gap:8px;font-size:.84rem;align-items:start}
+.fitem i{width:10px;height:10px;border-radius:50%;margin-top:5px;background:var(--secondary)}
+.fitem i.ok{background:var(--teal)}.fitem i.warn{background:var(--warn)}.fitem i.failed{background:var(--risk)}
+.fitem b{font-weight:700}
+.fitem span{color:var(--muted);display:block}
+.fitem.failed b,.fitem.failed span.note{color:var(--risk)}
+.ftoday{margin-top:10px;font-size:.88rem;border-top:1px solid var(--line);padding-top:8px}
+.fbad{margin-top:10px;padding:8px 12px;background:var(--risk-soft);color:var(--risk);border-radius:8px;font-size:.88rem;font-weight:600}
+.notes ul{margin:0;padding-left:18px;font-size:.95rem}
+.notes li{margin:0 0 6px}
+.notes.two{grid-template-columns:repeat(2,1fr)}
+@media (max-width:820px){.notes.two{grid-template-columns:1fr}}
+
+
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2,.cols{grid-template-columns:1fr}.card{min-width:0}.tw{overflow-x:auto}.brand span{display:block}.brow{grid-template-columns:minmax(100px,1fr) minmax(70px,1.5fr) minmax(45px,auto)}.pth{overflow-wrap:anywhere}}
+
+.answer{max-width:900px}.answer h1{max-width:28ch}.brand span{margin-left:.3em}
+</style></head>
+<body><script type="application/json" id="state">{"sample": true, "brand": "Example Property Site", "updated": "2026-10-22", "timezone": "UTC", "indexTotal": null, "weeks": [{"start": "2026-09-28", "days": 7, "leads": 0.6, "intent": 1.0, "sessions": 12.7, "orgLeads": 0.3, "orgIntent": 0.6, "clicks": 5.0, "impressions": 500.0}, {"start": "2026-10-05", "days": 7, "leads": 0.4, "intent": 0.7, "sessions": 13.0, "orgLeads": 0.3, "orgIntent": 0.4, "clicks": 6.0, "impressions": 550.0}, {"start": "2026-10-12", "days": 7, "leads": 0.6, "intent": 0.9, "sessions": 13.0, "orgLeads": 0.3, "orgIntent": 0.6, "clicks": 7.0, "impressions": 600.0}], "daily": [{"d": "2026-09-28", "leads": 2, "intent": 2, "sessions": 11, "orgLeads": 1}, {"d": "2026-09-29", "leads": 0, "intent": 0, "sessions": 13, "orgLeads": 0}, {"d": "2026-09-30", "leads": 0, "intent": 1, "sessions": 13, "orgLeads": 0}, {"d": "2026-10-01", "leads": 0, "intent": 1, "sessions": 15, "orgLeads": 0}, {"d": "2026-10-02", "leads": 1, "intent": 1, "sessions": 11, "orgLeads": 1}, {"d": "2026-10-03", "leads": 1, "intent": 0, "sessions": 13, "orgLeads": 0}, {"d": "2026-10-04", "leads": 0, "intent": 2, "sessions": 13, "orgLeads": 0}, {"d": "2026-10-05", "leads": 0, "intent": 0, "sessions": 15, "orgLeads": 0}, {"d": "2026-10-06", "leads": 1, "intent": 1, "sessions": 11, "orgLeads": 1}, {"d": "2026-10-07", "leads": 0, "intent": 1, "sessions": 13, "orgLeads": 0}, {"d": "2026-10-08", "leads": 1, "intent": 1, "sessions": 13, "orgLeads": 0}, {"d": "2026-10-09", "leads": 0, "intent": 0, "sessions": 15, "orgLeads": 0}, {"d": "2026-10-10", "leads": 1, "intent": 2, "sessions": 11, "orgLeads": 1}, {"d": "2026-10-11", "leads": 0, "intent": 0, "sessions": 13, "orgLeads": 0}, {"d": "2026-10-12", "leads": 0, "intent": 1, "sessions": 13, "orgLeads": 0}, {"d": "2026-10-13", "leads": 1, "intent": 1, "sessions": 15, "orgLeads": 0}, {"d": "2026-10-14", "leads": 1, "intent": 1, "sessions": 11, "orgLeads": 1}, {"d": "2026-10-15", "leads": 0, "intent": 0, "sessions": 13, "orgLeads": 0}, {"d": "2026-10-16", "leads": 0, "intent": 2, "sessions": 13, "orgLeads": 0}, {"d": "2026-10-17", "leads": 0, "intent": 0, "sessions": 15, "orgLeads": 0}, {"d": "2026-10-18", "leads": 2, "intent": 1, "sessions": 11, "orgLeads": 1}], "slices": {"start": "2026-09-28", "end": "2026-10-18", "sessions": [["2026-09-28", "United Arab Emirates", "Organic Search", 8, 6], ["2026-09-28", "United Kingdom", "Organic Search", 3, 2], ["2026-09-28", "United Arab Emirates", "Paid Search", 5, 3], ["2026-09-28", "Singapore", "Direct", 8, 0], ["2026-09-29", "United Arab Emirates", "Organic Search", 9, 7], ["2026-09-29", "United Kingdom", "Organic Search", 4, 2], ["2026-09-29", "United Arab Emirates", "Paid Search", 6, 4], ["2026-09-29", "Singapore", "Direct", 8, 0], ["2026-09-30", "United Arab Emirates", "Organic Search", 10, 8], ["2026-09-30", "United Kingdom", "Organic Search", 3, 2], ["2026-09-30", "United Arab Emirates", "Paid Search", 7, 3], ["2026-09-30", "Singapore", "Direct", 8, 0], ["2026-10-01", "United Arab Emirates", "Organic Search", 11, 6], ["2026-10-01", "United Kingdom", "Organic Search", 4, 2], ["2026-10-01", "United Arab Emirates", "Paid Search", 5, 4], ["2026-10-01", "Singapore", "Direct", 8, 0], ["2026-10-02", "United Arab Emirates", "Organic Search", 8, 7], ["2026-10-02", "United Kingdom", "Organic Search", 3, 2], ["2026-10-02", "United Arab Emirates", "Paid Search", 6, 3], ["2026-10-02", "Singapore", "Direct", 8, 0], ["2026-10-03", "United Arab Emirates", "Organic Search", 9, 8], ["2026-10-03", "United Kingdom", "Organic Search", 4, 2], ["2026-10-03", "United Arab Emirates", "Paid Search", 7, 4], ["2026-10-03", "Singapore", "Direct", 8, 0], ["2026-10-04", "United Arab Emirates", "Organic Search", 10, 6], ["2026-10-04", "United Kingdom", "Organic Search", 3, 2], ["2026-10-04", "United Arab Emirates", "Paid Search", 5, 3], ["2026-10-04", "Singapore", "Direct", 8, 0], ["2026-10-05", "United Arab Emirates", "Organic Search", 11, 7], ["2026-10-05", "United Kingdom", "Organic Search", 4, 2], ["2026-10-05", "United Arab Emirates", "Paid Search", 6, 4], ["2026-10-05", "Singapore", "Direct", 8, 0], ["2026-10-06", "United Arab Emirates", "Organic Search", 8, 8], ["2026-10-06", "United Kingdom", "Organic Search", 3, 2], ["2026-10-06", "United Arab Emirates", "Paid Search", 7, 3], ["2026-10-06", "Singapore", "Direct", 8, 0], ["2026-10-07", "United Arab Emirates", "Organic Search", 9, 6], ["2026-10-07", "United Kingdom", "Organic Search", 4, 2], ["2026-10-07", "United Arab Emirates", "Paid Search", 5, 4], ["2026-10-07", "Singapore", "Direct", 8, 0], ["2026-10-08", "United Arab Emirates", "Organic Search", 10, 7], ["2026-10-08", "United Kingdom", "Organic Search", 3, 2], ["2026-10-08", "United Arab Emirates", "Paid Search", 6, 3], ["2026-10-08", "Singapore", "Direct", 8, 0], ["2026-10-09", "United Arab Emirates", "Organic Search", 11, 8], ["2026-10-09", "United Kingdom", "Organic Search", 4, 2], ["2026-10-09", "United Arab Emirates", "Paid Search", 7, 4], ["2026-10-09", "Singapore", "Direct", 8, 0], ["2026-10-10", "United Arab Emirates", "Organic Search", 8, 6], ["2026-10-10", "United Kingdom", "Organic Search", 3, 2], ["2026-10-10", "United Arab Emirates", "Paid Search", 5, 3], ["2026-10-10", "Singapore", "Direct", 8, 0], ["2026-10-11", "United Arab Emirates", "Organic Search", 9, 7], ["2026-10-11", "United Kingdom", "Organic Search", 4, 2], ["2026-10-11", "United Arab Emirates", "Paid Search", 6, 4], ["2026-10-11", "Singapore", "Direct", 8, 0], ["2026-10-12", "United Arab Emirates", "Organic Search", 10, 8], ["2026-10-12", "United Kingdom", "Organic Search", 3, 2], ["2026-10-12", "United Arab Emirates", "Paid Search", 7, 3], ["2026-10-12", "Singapore", "Direct", 8, 0], ["2026-10-13", "United Arab Emirates", "Organic Search", 11, 6], ["2026-10-13", "United Kingdom", "Organic Search", 4, 2], ["2026-10-13", "United Arab Emirates", "Paid Search", 5, 4], ["2026-10-13", "Singapore", "Direct", 8, 0], ["2026-10-14", "United Arab Emirates", "Organic Search", 8, 7], ["2026-10-14", "United Kingdom", "Organic Search", 3, 2], ["2026-10-14", "United Arab Emirates", "Paid Search", 6, 3], ["2026-10-14", "Singapore", "Direct", 8, 0], ["2026-10-15", "United Arab Emirates", "Organic Search", 9, 8], ["2026-10-15", "United Kingdom", "Organic Search", 4, 2], ["2026-10-15", "United Arab Emirates", "Paid Search", 7, 4], ["2026-10-15", "Singapore", "Direct", 8, 0], ["2026-10-16", "United Arab Emirates", "Organic Search", 10, 6], ["2026-10-16", "United Kingdom", "Organic Search", 3, 2], ["2026-10-16", "United Arab Emirates", "Paid Search", 5, 3], ["2026-10-16", "Singapore", "Direct", 8, 0], ["2026-10-17", "United Arab Emirates", "Organic Search", 11, 7], ["2026-10-17", "United Kingdom", "Organic Search", 4, 2], ["2026-10-17", "United Arab Emirates", "Paid Search", 6, 4], ["2026-10-17", "Singapore", "Direct", 8, 0], ["2026-10-18", "United Arab Emirates", "Organic Search", 8, 8], ["2026-10-18", "United Kingdom", "Organic Search", 3, 2], ["2026-10-18", "United Arab Emirates", "Paid Search", 7, 3], ["2026-10-18", "Singapore", "Direct", 8, 0]], "events": [["2026-09-28", "United Arab Emirates", "Organic Search", "generate_lead", 1], ["2026-09-28", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-09-28", "United Arab Emirates", "Paid Search", "generate_lead", 1], ["2026-09-28", "United Arab Emirates", "Paid Search", "phone_click", 1], ["2026-09-30", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-10-01", "United Arab Emirates", "Paid Search", "phone_click", 1], ["2026-10-02", "United Arab Emirates", "Organic Search", "generate_lead", 1], ["2026-10-02", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-10-03", "United Arab Emirates", "Paid Search", "generate_lead", 1], ["2026-10-04", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-10-04", "United Arab Emirates", "Paid Search", "phone_click", 1], ["2026-10-06", "United Arab Emirates", "Organic Search", "generate_lead", 1], ["2026-10-06", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-10-07", "United Arab Emirates", "Paid Search", "phone_click", 1], ["2026-10-08", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-10-08", "United Arab Emirates", "Paid Search", "generate_lead", 1], ["2026-10-10", "United Arab Emirates", "Organic Search", "generate_lead", 1], ["2026-10-10", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-10-10", "United Arab Emirates", "Paid Search", "phone_click", 1], ["2026-10-12", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-10-13", "United Arab Emirates", "Paid Search", "generate_lead", 1], ["2026-10-13", "United Arab Emirates", "Paid Search", "phone_click", 1], ["2026-10-14", "United Arab Emirates", "Organic Search", "generate_lead", 1], ["2026-10-14", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-10-16", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-10-16", "United Arab Emirates", "Paid Search", "phone_click", 1], ["2026-10-18", "United Arab Emirates", "Organic Search", "generate_lead", 1], ["2026-10-18", "United Arab Emirates", "Organic Search", "whatsapp_click", 1], ["2026-10-18", "United Arab Emirates", "Paid Search", "generate_lead", 1]], "leadEvents": ["generate_lead"], "rule": {"min_sessions": 15, "max_engaged": 0.08}, "bots": [{"country": "Singapore", "channel": "Direct", "sessions": 168, "engaged": 0}]}, "notes": {"moved": "All figures in this public example are fictional. The layout is adapted from a supplied report.\nSearch clicks, GA4 sessions and Ads clicks describe different measures.\nThe optional low-engagement filter changes only the sections named beside the controls.", "decisions": "Review enquiry event definitions before treating events as qualified prospects.\nInspect query intent and landing pages together before changing advertising.\nKeep each source cutoff visible when comparing periods."}, "freshness": {"runAt": "2026-10-22T09:00:00+00:00", "sources": [{"name": "GA4", "status": "info", "retrieved": "2026-10-22T09:00:00+00:00", "covers": "2026-10-18", "note": "Illustrative fixture; not retrieved from a live account."}, {"name": "Search Console", "status": "info", "retrieved": "2026-10-22T09:00:00+00:00", "covers": "2026-10-18", "note": "Illustrative fixture; not retrieved from a live account."}, {"name": "Google Ads", "status": "info", "retrieved": "2026-10-22T09:00:00+00:00", "covers": "2026-10-18", "note": "Illustrative fixture; not retrieved from a live account."}, {"name": "Keyword analysis", "status": "info", "retrieved": "2026-10-22T09:00:00+00:00", "covers": "2026-10-18", "note": "Illustrative fixture; not retrieved from a live account."}]}, "visuals": {"asOf": "2026-10-22", "keywords": {"built": "2026-10-22", "addressable": 48000, "groups": [{"label": "Projects with no page", "vol": 12000, "kind": "gap"}, {"label": "Developer names", "vol": 18000, "kind": "name"}, {"label": "Community names", "vol": 10000, "kind": "name"}, {"label": "Guides and property types", "vol": 8000, "kind": "generic"}], "nameShare": 83, "gapProjects": 3, "gapVol": 12000, "top": [{"name": "Harbour One", "dev": "Example Developer A", "vol": 5000}, {"name": "Garden Court", "dev": "Example Developer A", "vol": 4000}, {"name": "Park House", "dev": "Example Developer B", "vol": 3000}], "devs": [{"dev": "Example Developer A", "vol": 9000, "projects": 2}, {"dev": "Example Developer B", "vol": 3000, "projects": 1}], "newPageKeywords": 3, "newPageVol": 12000, "coveredVol": 36000}, "journey": {"from": "2026-09-28", "to": "2026-10-18", "sessions": 271, "engaged": 189, "landing": [{"label": "Homepage", "n": 90}, {"label": "Guides and articles", "n": 70}, {"label": "Property pages", "n": 80}, {"label": "Contact", "n": 31}], "funnel": [{"label": "Organic sessions", "n": 271}, {"label": "Engaged sessions", "n": 189}, {"label": "Form opens (events)", "n": 18}, {"label": "Contact clicks (events)", "n": 11}, {"label": "Listing views (events)", "n": 25}, {"label": "Form starts (events)", "n": 8}, {"label": "Recorded lead events", "n": 6}], "entry": [{"from": "Google", "to": "/", "n": 40}, {"from": "Other search", "to": "/properties/harbour-one/", "n": 12}], "onward": [{"from": "/", "to": "/contact/", "n": 15}, {"from": "/guides/", "to": "/properties/harbour-one/", "n": 8}], "devices": {"desktop": 150, "mobile": 121}, "gscClicks": 126, "brandClicks": 12, "visibleClicks": 20, "leadPage": "/properties/harbour-one/", "leadEvents": 6, "leadUsers": 6}, "paid": {"currency": "USD", "live": true, "manual": "Illustrative advertising fixture; no live campaigns or account identifiers.", "start": "2026-09-28", "budget": 100, "enabled": 2, "pulled": "2026-10-22T09:00:00+00:00", "campaigns": [{"name": "Example campaign A", "status": "ENABLED", "start": "2026-09-28", "budget": 60, "spend": 241.92, "clicks": 100, "impr": 1500, "ctr": 6.666666666666667, "cpc": 2.42}, {"name": "Example campaign B", "status": "ENABLED", "start": "2026-09-28", "budget": 40, "spend": 161.28, "clicks": 68, "impr": 960, "ctr": 7.083333333333333, "cpc": 2.37}], "weeks": [{"start": "2026-09-28", "clicks": 55, "sessions": 41, "leads": 2, "intent": 3, "spend": 132.0, "impr": 808, "conv": 2}, {"start": "2026-10-05", "clicks": 56, "sessions": 42, "leads": 1, "intent": 2, "spend": 134.4, "impr": 820, "conv": 1}, {"start": "2026-10-12", "clicks": 57, "sessions": 43, "leads": 2, "intent": 2, "spend": 136.8, "impr": 832, "conv": 2}], "daily": [{"d": "2026-09-28", "impr": 100, "clicks": 7, "cost": 16.8, "sessions": 5, "engaged": 3, "leads": 1, "intent": 1}, {"d": "2026-09-29", "impr": 112, "clicks": 8, "cost": 19.2, "sessions": 6, "engaged": 4, "leads": 0, "intent": 0}, {"d": "2026-09-30", "impr": 124, "clicks": 9, "cost": 21.6, "sessions": 7, "engaged": 3, "leads": 0, "intent": 0}, {"d": "2026-10-01", "impr": 136, "clicks": 7, "cost": 16.8, "sessions": 5, "engaged": 4, "leads": 0, "intent": 1}, {"d": "2026-10-02", "impr": 100, "clicks": 8, "cost": 19.2, "sessions": 6, "engaged": 3, "leads": 0, "intent": 0}, {"d": "2026-10-03", "impr": 112, "clicks": 9, "cost": 21.6, "sessions": 7, "engaged": 4, "leads": 1, "intent": 0}, {"d": "2026-10-04", "impr": 124, "clicks": 7, "cost": 16.8, "sessions": 5, "engaged": 3, "leads": 0, "intent": 1}, {"d": "2026-10-05", "impr": 136, "clicks": 8, "cost": 19.2, "sessions": 6, "engaged": 4, "leads": 0, "intent": 0}, {"d": "2026-10-06", "impr": 100, "clicks": 9, "cost": 21.6, "sessions": 7, "engaged": 3, "leads": 0, "intent": 0}, {"d": "2026-10-07", "impr": 112, "clicks": 7, "cost": 16.8, "sessions": 5, "engaged": 4, "leads": 0, "intent": 1}, {"d": "2026-10-08", "impr": 124, "clicks": 8, "cost": 19.2, "sessions": 6, "engaged": 3, "leads": 1, "intent": 0}, {"d": "2026-10-09", "impr": 136, "clicks": 9, "cost": 21.6, "sessions": 7, "engaged": 4, "leads": 0, "intent": 0}, {"d": "2026-10-10", "impr": 100, "clicks": 7, "cost": 16.8, "sessions": 5, "engaged": 3, "leads": 0, "intent": 1}, {"d": "2026-10-11", "impr": 112, "clicks": 8, "cost": 19.2, "sessions": 6, "engaged": 4, "leads": 0, "intent": 0}, {"d": "2026-10-12", "impr": 124, "clicks": 9, "cost": 21.6, "sessions": 7, "engaged": 3, "leads": 0, "intent": 0}, {"d": "2026-10-13", "impr": 136, "clicks": 7, "cost": 16.8, "sessions": 5, "engaged": 4, "leads": 1, "intent": 1}, {"d": "2026-10-14", "impr": 100, "clicks": 8, "cost": 19.2, "sessions": 6, "engaged": 3, "leads": 0, "intent": 0}, {"d": "2026-10-15", "impr": 112, "clicks": 9, "cost": 21.6, "sessions": 7, "engaged": 4, "leads": 0, "intent": 0}, {"d": "2026-10-16", "impr": 124, "clicks": 7, "cost": 16.8, "sessions": 5, "engaged": 3, "leads": 0, "intent": 1}, {"d": "2026-10-17", "impr": 136, "clicks": 8, "cost": 19.2, "sessions": 6, "engaged": 4, "leads": 0, "intent": 0}, {"d": "2026-10-18", "impr": 100, "clicks": 9, "cost": 21.6, "sessions": 7, "engaged": 3, "leads": 1, "intent": 0}], "totals": {"spend": 403.2, "clicks": 168, "impr": 2460, "ctr": 6.829268292682928, "cpc": 2.4, "sessions": 126, "engaged": 73, "leads": 5, "cpl": 80.64, "intent": 7}, "checks": [{"s": "warn", "t": "Example check: reconcile conversions", "d": "Recorded events should be compared with accepted enquiries before being called qualified leads."}], "terms": [{"term": "example harbour apartments", "clicks": 7, "impressions": 90, "cost": 16.8, "conversions": 1}, {"term": "example property guide", "clicks": 5, "impressions": 75, "cost": 12, "conversions": 0}]}, "risks": [{"id": "quality", "level": "watch", "title": "A low-engagement segment needs review", "big": "168", "bigNote": "illustrative sessions in the flagged segment", "text": "The example Singapore Direct segment has no engaged sessions. Low engagement alone does not prove bots. Use the optional filter to compare recorded activity.", "viz": {"type": "none"}}, {"id": "ctr", "level": "watch", "title": "Search click-through by week", "big": "1.17%", "bigNote": "Observed click-through; no assumed benchmark", "text": "Search clicks divided by impressions for each observed week. Compare compatible periods and inspect query coverage before interpreting a change.", "viz": {"type": "ctr"}}]}, "webmasters": [{"name": "Bing Webmaster Tools", "status": "Illustrative connected source", "note": "Fictional provider-returned dates. These clicks are not added to Google clicks or GA4 sessions.", "rows": [{"date": "2026-10-12", "clicks": 6, "impressions": 180}, {"date": "2026-10-18", "clicks": 8, "impressions": 210}]}, {"name": "Yandex Webmaster", "status": "Illustrative unavailable source", "note": "This demonstrates how an unavailable response is shown. It is not a measured zero or a live check of an account.", "rows": []}]}</script><main id="root"></main><script id="app">
+(function(){
+var S=JSON.parse(document.getElementById('state').textContent);
+var FIELDS=[['leads','Leads/day',1],['intent','Lead actions/day',0],['sessions','Organic sessions/day',0],['clicks','Search clicks/day',0],['impressions','Impressions/day',0],['indexed','Pages indexed',0]];
+var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+var S0=JSON.parse(JSON.stringify(S));
+var F={loc:null,bots:false,open:false,bopen:false};
+try{var svf=JSON.parse(localStorage.getItem('marketing-report-sample-filters-v1')||'null');if(svf){F.loc=svf.loc||null;F.bots=svf.bots===true;}}catch(e){}
+function saveF(){try{localStorage.setItem('marketing-report-sample-filters-v1',JSON.stringify({loc:F.loc,bots:F.bots}));}catch(e){}}
+function isBot(L,c,ch){return !!(L.botmap[c+'|'+ch]||L.botmap['*|'+ch]);}
+function okRow(L,c,ch){if(F.loc&&!F.loc[c])return false;if(F.bots&&isBot(L,c,ch))return false;return true;}
+function applyFilters(){var L=S0.slices;S.weeks=JSON.parse(JSON.stringify(S0.weeks));S.daily=S0.daily;S.view=null;if(!L)return;
+ if(!L.botmap){L.botmap={};L.bots.forEach(function(b){L.botmap[b.country+'|'+b.channel]=1;});}
+ var days={},v={sessAll:0,sessShown:0,leadAll:0,leadShown:0};function D(k){return days[k]||(days[k]={d:k,leads:0,intent:0,sessions:0,orgLeads:0,orgIntent:0});}
+ L.sessions.forEach(function(r){var x=D(r[0]);v.sessAll+=r[3];if(!okRow(L,r[1],r[2]))return;v.sessShown+=r[3];if(r[2]==='Organic Search')x.sessions+=r[3];});
+ L.events.forEach(function(r){var x=D(r[0]);var isL=L.leadEvents.indexOf(r[3])>=0;if(isL)v.leadAll+=r[4];if(!okRow(L,r[1],r[2]))return;if(isL){x.leads+=r[4];v.leadShown+=r[4];if(r[2]==='Organic Search')x.orgLeads+=r[4];}else{x.intent+=r[4];if(r[2]==='Organic Search')x.orgIntent+=r[4];}});
+ var arr=Object.keys(days).sort().map(function(k){return days[k];});
+ S.daily=arr.map(function(x){return {d:x.d,leads:x.leads,intent:x.intent,sessions:x.sessions,orgLeads:x.orgLeads};});
+ S.weeks.forEach(function(w){var s=d(w.start).getTime();var ds=arr.filter(function(x){var t=d(x.d).getTime();return t>=s&&t<s+7*864e5;});if(!ds.length)return;
+  var avg=function(k){return ds.reduce(function(a,x){return a+x[k];},0)/ds.length;};
+  w.leads=avg('leads');w.intent=avg('intent');w.sessions=avg('sessions');w.orgLeads=avg('orgLeads');w.orgIntent=avg('orgIntent');w.days=ds.length;});
+ S.view=v;}
+function countries(){var L=S0.slices,m={};L.sessions.forEach(function(r){m[r[1]]=(m[r[1]]||0)+r[3];});L.events.forEach(function(r){if(!(r[1] in m))m[r[1]]=0;});return Object.keys(m).map(function(k){return [k,m[k]];}).sort(function(a,b){return b[1]-a[1];});}
+function freshBar(){var F0=S0.freshness;if(!F0)return null;
+ var box=el('div',{cls:'fresh',role:'group','aria-label':'Data freshness'},[el('h3',{text:'Source freshness and coverage'})]);
+ var g=el('div',{cls:'fgrid'});var bad=[];
+ function ft(s){return s?fmtDate(s.slice(0,10))+' '+s.slice(11,16):'never';}
+ F0.sources.forEach(function(s){if(s.status==='failed')bad.push(s.name);var covers=s.covers?'covers to '+fmtDate(s.covers)+(s.partial?' (today so far)':''):'';
+  g.appendChild(el('div',{cls:'fitem '+s.status},[el('i',{cls:s.status}),el('div',{},[el('b',{text:s.name+(s.status==='failed'?' — NOT REFRESHED':s.status==='warn'?' — CHECK':'')}),el('span',{text:'Pulled '+ft(s.retrieved)+(covers?' · '+covers:'')}),el('span',{cls:'note',text:s.note})])]));});
+ box.appendChild(g);
+ if(bad.length)box.appendChild(el('p',{cls:'fbad',text:'Not refreshed this time: '+bad.join(', ')+'. The numbers that depend on them are from the last good pull shown above, not from now.'}));
+ var T=S0.today;if(T)box.appendChild(el('p',{cls:'ftoday'},[el('b',{text:'Today so far ('+fmtDate(T.d)+', partial, as of '+T.asOf.slice(11,16)+'): '}),T.sessions+' sessions ('+T.organic+' organic, '+T.paid+' paid), '+T.leads+' lead'+(T.leads===1?'':'s')+', '+T.intent+' lead action'+(T.intent===1?'':'s')+'. Not included in the weekly figures or the rolling 7 days.']));
+ box.appendChild(el('p',{cls:'h2note',style:'margin-top:8px',text:'Snapshot built '+ft(F0.runAt)+'. Sources have independent cutoffs; partial days are separate from completed periods.'}));
+ return box;}
+
+function filterBar(){var L=S0.slices;if(!L)return null;var cl=countries();
+ function setLoc(excl){if(excl===null){F.loc=null;}else{var o={};cl.forEach(function(c){if(excl.indexOf(c[0])<0)o[c[0]]=1;});F.loc=o;}saveF();render();}
+ function onlyLoc(list){var o={};list.forEach(function(c){o[c]=1;});F.loc=o;saveF();render();}
+ var key=F.loc?Object.keys(F.loc).sort().join('|'):'';
+ function keyEx(ex){return cl.map(function(c){return c[0];}).filter(function(c){return ex.indexOf(c)<0;}).sort().join('|');}
+ var PRE=[['All locations',F.loc===null,function(){setLoc(null);}],['UAE only',key==='United Arab Emirates',function(){onlyLoc(['United Arab Emirates']);}],['Exclude Pakistan',F.loc!==null&&key===keyEx(['Pakistan']),function(){setLoc(['Pakistan']);}],['Exclude Pakistan and India',F.loc!==null&&key===keyEx(['Pakistan','India']),function(){setLoc(['Pakistan','India']);}]];
+ var grp=el('div',{cls:'fgroup'});PRE.forEach(function(p){var b=el('button',{type:'button',cls:'chipb'+(p[1]?' on':''),text:p[0]});b.addEventListener('click',p[2]);grp.appendChild(b);});
+ var bot=el('input',{type:'checkbox',id:'f-bots'});bot.checked=F.bots;bot.addEventListener('change',function(){F.bots=bot.checked;saveF();render();});
+ var bar=el('div',{cls:'filters',role:'group','aria-label':'Filters'},[el('span',{cls:'fl',text:'Location'}),grp,el('label',{cls:'chk'},[bot,'Exclude flagged low-engagement traffic'])]);
+ var det=el('details',{cls:'fdet'});if(F.open)det.setAttribute('open','');det.addEventListener('toggle',function(){F.open=det.open;});det.appendChild(el('summary',{text:'Choose countries'}));
+ var list=el('div',{cls:'clist'});cl.forEach(function(c){var cb=el('input',{type:'checkbox'});cb.checked=!F.loc||!!F.loc[c[0]];cb.addEventListener('change',function(){var o={};var boxes=list.querySelectorAll('input');cl.forEach(function(cc,i){if(boxes[i].checked)o[cc[0]]=1;});F.loc=Object.keys(o).length===cl.length?null:o;saveF();render();});list.appendChild(el('label',{},[cb,c[0],el('em',{text:c[1]?comma(c[1])+' sessions':'events only'})]));});
+ det.appendChild(list);bar.appendChild(det);
+ var bd=el('details',{cls:'fdet'});if(F.bopen)bd.setAttribute('open','');bd.addEventListener('toggle',function(){F.bopen=bd.open;});bd.appendChild(el('summary',{text:'What counts as bot-like?'}));
+ var bl=el('ul',{cls:'botl'});L.bots.filter(function(b){return b.country!=='*';}).forEach(function(b){bl.appendChild(el('li',{text:b.country+', '+b.channel+': '+comma(b.sessions)+' sessions, '+b.engaged+' engaged ('+(b.engaged/b.sessions*100).toFixed(1)+'%)'}));});
+ L.bots.filter(function(b){return b.country==='*';}).forEach(function(b){bl.appendChild(el('li',{text:'Whole channel '+b.channel+': '+comma(b.sessions)+' sessions, '+b.engaged+' engaged'}));});
+ bd.appendChild(el('p',{cls:'h2note',text:'A country and channel pair, or a whole channel, is flagged as low-engagement when it has at least '+L.rule.min_sessions+' sessions in the period and under '+Math.round(L.rule.max_engaged*100)+'% of them are engaged (a visit that lasts 10 seconds, views 2 pages or takes an action). This is a heuristic, not proof of bots. The optional filter applies only to the sections listed below.'}));bd.appendChild(bl);bar.appendChild(bd);
+ var v=S.view;bar.appendChild(el('p',{cls:'fsum'},['Showing ',el('b',{text:comma(v.sessShown)+' of '+comma(v.sessAll)+' sessions'}),' and ',el('b',{text:v.leadShown+' of '+v.leadAll+' lead events'}),' since '+fmtDate(L.start)+'. Applies to the leads, lead actions, organic sessions, conversion and source figures. Search Console figures, the Google Ads section and the keyword and journey sections are not filtered.']));
+ return bar;}
+function sourceSection(){var L=S0.slices;if(!L)return null;var m={};
+ L.sessions.forEach(function(r){if(!okRow(L,r[1],r[2]))return;var x=m[r[2]]||(m[r[2]]={s:0,e:0,l:0,i:0});x.s+=r[3];x.e+=r[4];});
+ L.events.forEach(function(r){if(!okRow(L,r[1],r[2]))return;var x=m[r[2]]||(m[r[2]]={s:0,e:0,l:0,i:0});if(L.leadEvents.indexOf(r[3])>=0)x.l+=r[4];else x.i+=r[4];});
+ var rows=Object.keys(m).map(function(k){return [k,m[k]];}).sort(function(a,b){return b[1].s-a[1].s;});
+ var s=el('section',{},[el('h2',{text:'Where traffic and leads come from'}),el('p',{cls:'h2note',text:'By source, since '+fmtDate(L.start)+', with the filters above applied. Engaged means a visit of 10 seconds or more, 2 or more pages, or an action.'})]);
+ var tb=el('table',{cls:'t2'},[el('thead',{},[el('tr',{},['Source','Sessions','Engaged','Lead events','Lead actions'].map(function(t){return el('th',{text:t});}))])]);var bd=el('tbody');
+ rows.forEach(function(r){var x=r[1];bd.appendChild(el('tr',{},[el('td',{text:r[0]}),el('td',{text:comma(x.s)}),el('td',{text:x.s?Math.round(x.e/x.s*100)+'%':'\u2014'}),el('td',{text:String(x.l)}),el('td',{text:String(x.i)})]));});
+ tb.appendChild(bd);s.appendChild(el('div',{cls:'card',style:'margin-top:16px'},[el('div',{cls:'tw'},[tb])]));return s;}
+
+
+function el(tag,attrs,kids){var e=document.createElement(tag);if(attrs)for(var k in attrs){if(k==='text')e.textContent=attrs[k];else if(k==='cls')e.className=attrs[k];else e.setAttribute(k,attrs[k]);}(kids||[]).forEach(function(c){if(c!=null)e.appendChild(typeof c==='string'?document.createTextNode(c):c);});return e;}
+function d(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]));}
+function fmtDate(s){var x=d(s);return x.getUTCDate()+' '+MON[x.getUTCMonth()];}
+function has(v){return v!==null&&v!==undefined&&v!==''&&!isNaN(v);}
+function n(v,dec){if(!has(v))return '\u2014';v=+v;if(dec)return v.toFixed(dec);if(v>=10000)return (v/1000).toFixed(1).replace(/\.0$/,'')+'k';return Math.round(v).toLocaleString('en-US');}
+function cur(){var c=-1,any=-1;S.weeks.forEach(function(w,i){if(has(w.leads)){any=i;if(!has(w.days)||+w.days>=3)c=i;}});return c>=0?c:any;}
+
+
+function pct(a,b){if(!has(a)||!has(b)||+b===0)return null;return (a-b)/b*100;}
+function pctTxt(p){if(p===null)return '\u2014';var r=Math.round(p);return (r>0?'+':r<0?'\u2212':'')+Math.abs(r)+'%';}
+function cls(p){return p===null||Math.abs(p)<1?'flat':p>0?'up':'down';}
+
+function fmtV(v){return v>=1e6?(v/1e6).toFixed(1).replace(/\.0$/,'')+'M':v>=1e4?Math.round(v/1e3)+'k':v>=1e3?(v/1e3).toFixed(1).replace(/\.0$/,'')+'k':String(Math.round(v));}
+function comma(v){return Math.round(v).toLocaleString('en-US');}
+function brow(label,sub,val,max,color,txt){return el('div',{cls:'brow'},[el('span',{cls:'lb'},[label,sub?el('small',{text:sub}):null]),el('span',{cls:'tr'},[el('i',{style:'width:'+(val>0&&max>0?Math.max(1.5,val/max*100):0)+'%;background:'+color})]),el('span',{cls:'vl',text:txt||comma(val)})]);}
+function swatch(c,t,v){return el('span',{},[el('i',{cls:'sw',style:'background:'+c}),t,v?el('em',{text:v}):null]);}
+
+function keywordSection(V){var K=V.keywords;if(!K)return null;
+ var s=el('section',{},[el('h2',{text:'Keyword gaps'}),el('p',{cls:'h2note',text:'Monthly searches in the UAE and target overseas markets (India excluded), from the keyword analysis of '+fmtDate(K.built)+'. '+K.nameShare+'% of the '+fmtV(K.addressable)+' addressable searches are for names of developers, projects and communities, not generic terms.'})]);
+ var col={gap:'var(--risk)',name:'var(--teal)',generic:'var(--secondary)'};var shade=[1,.78,.58,.4,1,.75,.55];
+ var card=el('div',{cls:'card',style:'margin-top:16px'},[el('h3',{text:'Where the searches are'}),el('p',{cls:'cnote',text:'Share of '+comma(K.addressable)+' addressable monthly searches. Red is demand for projects the site has no page for.'})]);
+ var st=el('div',{cls:'stack',role:'img','aria-label':'Share of addressable searches by type'});K.groups.forEach(function(g,i){var i2=el('i',{style:'width:'+(g.vol/K.addressable*100)+'%;background:'+col[g.kind]+';opacity:'+shade[i]});i2.setAttribute('title',g.label+': '+comma(g.vol));st.appendChild(i2);});card.appendChild(st);
+ var keys=el('div',{cls:'keys'});K.groups.forEach(function(g,i){var c=el('span',{},[el('i',{cls:'sw',style:'background:'+col[g.kind]+';opacity:'+shade[i]}),g.label,el('em',{text:fmtV(g.vol)+' \u00b7 '+Math.round(g.vol/K.addressable*100)+'%'})]);keys.appendChild(c);});card.appendChild(keys);s.appendChild(card);
+ var stats=el('div',{cls:'stats'},[el('div',{cls:'stat'},[el('b',{text:comma(K.gapProjects),style:'color:var(--risk)'}),el('span',{text:'projects people search for that the site has no page for'})]),el('div',{cls:'stat'},[el('b',{text:fmtV(K.gapVol),style:'color:var(--risk)'}),el('span',{text:'monthly searches for them ('+Math.round(K.gapVol/K.addressable*100)+'% of addressable)'})]),el('div',{cls:'stat'},[el('b',{text:fmtV(K.coveredVol)}),el('span',{text:'searches already matched by an existing page'})]),el('div',{cls:'stat'},[el('b',{text:comma(K.newPageKeywords)}),el('span',{text:'keywords that need a new page ('+fmtV(K.newPageVol)+' searches)'})])]);s.appendChild(stats);
+ var cols=el('div',{cls:'cols'});
+ var c1=el('div',{cls:'card'},[el('h3',{text:'Missing projects in this sample'}),el('p',{cls:'cnote',text:'Monthly searches. Each needs its own page.'})]);var mx=K.top[0].vol;K.top.forEach(function(p){c1.appendChild(brow(p.name,p.dev,p.vol,mx,'var(--risk)'));});cols.appendChild(c1);
+ var c2=el('div',{cls:'card'},[el('h3',{text:'Missing demand by developer'}),el('p',{cls:'cnote',text:'Searches for projects not on the site, grouped by developer. Count is projects.'})]);var m2=K.devs[0].vol;K.devs.forEach(function(p){c2.appendChild(brow(p.dev,p.projects+' projects',p.vol,m2,'var(--gold)'));});cols.appendChild(c2);
+ s.appendChild(cols);return s;}
+
+function riskViz(r){var v=r.viz,box=el('div',{});
+ if(v.type==='leads'||v.type==='intent'){var days=v.days,mx=1;days.forEach(function(x){var t=v.type==='leads'?x.leads:x.n;if(t>mx)mx=t;});
+  var row=el('div',{cls:'cols-viz'});days.forEach(function(x){var t=v.type==='leads'?x.leads:x.n;var stk=el('div',{cls:'stk',style:'height:'+(t?Math.max(6,t/mx*70):2)+'px'});
+   if(v.type==='leads'){var ok=x.leads-x.dup-x.burst;[[ok,'var(--teal)'],[x.dup,'var(--risk)'],[x.burst,'var(--gold)']].forEach(function(a){if(a[0])stk.appendChild(el('i',{style:'height:'+(a[0]/x.leads*100)+'%;background:'+a[1]}));});}
+   else if(t)stk.appendChild(el('i',{style:'height:100%;background:var(--teal)'}));
+   row.appendChild(el('div',{cls:'cv',title:fmtDate(x.d)+': '+t},[el('em',{text:t?String(t):'0',style:t?'':'color:var(--risk)'}),stk,el('small',{text:fmtDate(x.d)})]));});
+  box.appendChild(row);
+  if(v.type==='leads')box.appendChild(el('div',{cls:'leg2'},[swatch('var(--teal)','Counted'),swatch('var(--risk)','Probable duplicate (same minute)'),swatch('var(--gold)','Burst, looks like testing')]));
+  else box.appendChild(el('div',{cls:'leg2'},[el('span',{text:'WhatsApp, phone and email clicks per day, all channels. Red 0 = nothing recorded.'})]));}
+ if(v.type==='urls'){var mx2=1;v.sections.forEach(function(x){if(x['404']+x['307']>mx2)mx2=x['404']+x['307'];});
+  v.sections.forEach(function(x){var tot=x['404']+x['307'];box.appendChild(el('div',{cls:'brow'},[el('span',{cls:'lb',text:x.s}),el('span',{cls:'tr',style:'display:flex'},[x['404']?el('i',{style:'width:'+x['404']/mx2*100+'%;background:var(--risk);border-radius:0'}):null,x['307']?el('i',{style:'width:'+x['307']/mx2*100+'%;background:var(--gold);border-radius:0'}):null]),el('span',{cls:'vl',text:comma(tot)})]));});
+  box.appendChild(el('div',{cls:'leg2'},[swatch('var(--risk)','404 not found'),swatch('var(--gold)','307 temporary redirect to the homepage')]));}
+   if(v.type==='ctr'){var ws=S.weeks.filter(function(w){return has(w.clicks)&&has(w.impressions)&&+w.impressions>0;}),top=.01;ws.forEach(function(w){top=Math.max(top,w.clicks/w.impressions*100);});
+   ws.forEach(function(w){var value=w.clicks/w.impressions*100;box.appendChild(el('div',{cls:'ctrrow'},[el('span',{text:fmtDate(w.start)}),el('span',{cls:'tr'},[el('i',{style:'width:'+Math.max(1,value/top*100)+'%'})]),el('b',{text:value.toFixed(2)+'%'})]));});}
+return box;}
+function risksSection(V){if(!V.risks)return null;
+ var s=el('section',{},[el('h2',{text:'Risks'}),el('p',{cls:'h2note',text:'Ordered by how much each could mislead or cost us. Charts use the saved snapshot.'})]);
+ var g=el('div',{cls:'risks'});var LV={high:'High',med:'Medium',watch:'Watch'};
+ V.risks.forEach(function(r){g.appendChild(el('div',{cls:'rk '+r.level},[el('span',{cls:'chip',text:LV[r.level]||r.level}),el('h3',{text:r.title}),el('div',{cls:'big'},[el('b',{text:r.big}),el('span',{text:r.bigNote})]),riskViz(r),el('p',{text:r.text})]));});
+ s.appendChild(g);return s;}
+
+function adsSection(V){var P=V.paid;if(!P)return null;var CUR=P.currency,T=P.totals;
+ function money(v,d){return v==null?'\u2014':CUR+' '+Number(v).toLocaleString('en-US',{minimumFractionDigits:d||0,maximumFractionDigits:d||0});}
+ var s=el('section',{},[el('h2',{text:'Google Ads'}),el('p',{cls:'h2note',text:'Traffic and leads from paid search, next to organic. Spend, clicks and impressions come from the Google Ads account; sessions and leads come from GA4 on the same definitions as the organic numbers above, so the two can be compared.'})]);
+ if(!P.live)s.appendChild(el('p',{cls:'launch'},[el('b',{text:'Not live yet. '}),P.enabled+' of '+P.campaigns.length+' campaigns are enabled'+(P.start?'; both are set to start '+fmtDate(P.start):'')+'. Daily budget '+money(P.budget)+'. Every figure below fills in automatically once the campaigns spend. Until then, use the launch checks.']));
+  if(P.manual)s.appendChild(el('p',{cls:'launch'},[el('b',{text:'Data source. '}),P.manual]));
+ s.appendChild(el('div',{cls:'stats'},[
+  el('div',{cls:'stat'},[el('b',{text:money(T.spend,T.spend<100?2:0)}),el('span',{text:'spend since '+fmtDate(P.start)})]),
+  el('div',{cls:'stat'},[el('b',{text:comma(T.clicks)}),el('span',{text:'ad clicks'+(T.ctr!=null?' \u00b7 '+T.ctr.toFixed(1)+'% click-through':'')})]),
+  el('div',{cls:'stat'},[el('b',{text:money(T.cpc,2)}),el('span',{text:'average cost per click'})]),
+   el('div',{cls:'stat'},[el('b',{text:String(T.sessions)}),el('span',{text:'GA4 sessions recorded against a campaign ('+T.engaged+' engaged)'})]),
+  el('div',{cls:'stat'},[el('b',{text:String(T.leads)}),el('span',{text:'paid leads (GA4 generate_lead)'})]),
+  el('div',{cls:'stat'},[el('b',{text:money(T.cpl)}),el('span',{text:'cost per lead'})]),
+  el('div',{cls:'stat'},[el('b',{text:String(T.intent)}),el('span',{text:'paid WhatsApp, phone and email clicks'})])]));
+ var cols=el('div',{cls:'cols'});
+ var c1=el('div',{cls:'card'},[el('h3',{text:'Paid against organic, last 7 days'}),el('p',{cls:'cnote',text:'Per day over the last 7 days of GA4 data. Paid counts only GA4 sessions that match a campaign in the Ads account; stray google / cpc sessions are left out (see the checks).'})]);
+   var l7=(S.daily||[]).slice(-7),dset={},oS=0,oL=0,pS=0,pL=0;l7.forEach(function(x){dset[x.d]=1;oS+=x.sessions||0;oL+=x.orgLeads||0;});
+  (P.daily||[]).forEach(function(x){if(dset[x.d]){pS+=x.sessions;pL+=x.leads;}});
+  function pair(label,o,p,dec){var mx=Math.max(o,p,0.01);return el('div',{cls:'pair'},[el('span',{text:label}),el('div',{cls:'bars'},[el('div',{},[el('span',{cls:'tr'},[el('i',{style:'width:'+(o>0?Math.max(1,o/mx*100):0)+'%;background:var(--teal)'})]),el('b',{text:o.toFixed(dec)})]),el('div',{},[el('span',{cls:'tr'},[el('i',{style:'width:'+(p>0?Math.max(1,p/mx*100):0)+'%;background:var(--gold)'})]),el('b',{text:p.toFixed(dec)})])])]);}
+  if(l7.length){var nd=l7.length;c1.appendChild(pair('Sessions',oS/nd,pS/nd,1));c1.appendChild(pair('Leads',oL/nd,pL/nd,1));
+   c1.appendChild(el('div',{cls:'leg2'},[swatch('var(--teal)','Organic'),swatch('var(--gold)','Paid')]));
+   c1.appendChild(el('p',{cls:'cnote',style:'margin-top:10px',text:fmtDate(l7[0].d)+' to '+fmtDate(l7[nd-1].d)+': organic '+oS+' sessions and '+oL+' leads, paid '+pS+' sessions and '+pL+' leads.'}));}
+  else c1.appendChild(el('p',{cls:'cnote',text:'No data yet.'}));
+ cols.appendChild(c1);
+ var c2=el('div',{cls:'card'},[el('h3',{text:'Spend and leads by week'}),el('p',{cls:'cnote',text:'Weekly totals. Bar is spend.'})]);
+ var mxs=Math.max.apply(null,P.weeks.map(function(x){return x.spend;}).concat([1]));
+ if(!P.live)c2.appendChild(el('p',{cls:'cnote',text:'No spend yet.'}));
+ else P.weeks.forEach(function(x){if(!x.spend&&!x.clicks&&!x.sessions)return;c2.appendChild(brow(fmtDate(x.start),'',x.spend,mxs,'var(--gold)',money(x.spend)+' \u00b7 '+x.clicks+' clicks \u00b7 '+x.sessions+' sessions \u00b7 '+x.leads+' leads'));});
+ cols.appendChild(c2);s.appendChild(cols);
+  var dr=(P.daily||[]).filter(function(x){return x.impr||x.clicks||x.sessions;});
+  if(dr.length){var dc=el('div',{cls:'card',style:'margin-top:18px'},[el('h3',{text:'Day by day since launch'}),el('p',{cls:'cnote',text:'Impressions, clicks and spend are from the Ads account (pulled '+P.pulled.replace('T',' ').slice(0,16)+', provider time). Sessions, leads and lead actions are GA4 sessions matched to a campaign, so recent days can show more sessions than clicks until Ads is pulled again.'})]);
+   var dt=el('table',{cls:'t2'},[el('thead',{},[el('tr',{},['Date','Impr.','Clicks','Spend','GA4 sessions','Engaged','Leads','Lead actions'].map(function(t){return el('th',{text:t});}))])]);var db=el('tbody');
+   var lastD=(S.daily&&S.daily.length)?S.daily[S.daily.length-1].d:'';
+   dr.forEach(function(x){db.appendChild(el('tr',{},[el('td',{text:fmtDate(x.d)+(lastD&&x.d>lastD?' (today, partial)':'')}),el('td',{text:comma(x.impr)}),el('td',{text:comma(x.clicks)}),el('td',{text:money(x.cost,2)}),el('td',{text:comma(x.sessions)}),el('td',{text:comma(x.engaged)}),el('td',{text:String(x.leads)}),el('td',{text:String(x.intent)})]));});
+   dt.appendChild(db);dc.appendChild(el('div',{cls:'tw'},[dt]));s.appendChild(dc);}
+ var cc=el('div',{cls:'card',style:'margin-top:18px'},[el('h3',{text:'Campaigns'})]);
+ var tb=el('table',{cls:'t2'},[el('thead',{},[el('tr',{},['Campaign','Status','Starts','Budget/day','Spend','Clicks','Impr.','CTR','CPC'].map(function(t){return el('th',{text:t});}))])]);
+ var bd=el('tbody');P.campaigns.forEach(function(k){bd.appendChild(el('tr',{},[el('td',{text:k.name}),el('td',{},[el('span',{cls:'st'+(k.status==='ENABLED'?' on':''),text:k.status==='ENABLED'?'Live':k.status.toLowerCase()})]),el('td',{text:k.start?fmtDate(k.start):'\u2014'}),el('td',{text:money(k.budget)}),el('td',{text:money(k.spend)}),el('td',{text:comma(k.clicks)}),el('td',{text:comma(k.impr)}),el('td',{text:k.ctr!=null?k.ctr.toFixed(1)+'%':'\u2014'}),el('td',{text:money(k.cpc,2)})]));});
+ tb.appendChild(bd);cc.appendChild(el('div',{cls:'tw'},[tb]));s.appendChild(cc);
+ var ck=el('div',{cls:'card',style:'margin-top:18px'},[el('h3',{text:'Launch checks'}),el('p',{cls:'cnote',text:'Recorded from the Ads account and GA4 on '+fmtDate(P.pulled.slice(0,10))+'. Green is fine, amber needs a look, red should be fixed before launch.'})]);
+ var ul=el('ul',{cls:'ck'});P.checks.forEach(function(k){ul.appendChild(el('li',{},[el('i',{cls:'dot '+k.s}),el('b',{text:k.t}),el('span',{text:k.d})]));});ck.appendChild(ul);s.appendChild(ck);
+ if(P.terms&&P.terms.length){var tc=el('div',{cls:'card',style:'margin-top:18px'},[el('h3',{text:'What people searched before clicking'}),el('p',{cls:'cnote',text:'Top search terms by clicks.'})]);
+  var t2=el('table',{cls:'t2'},[el('thead',{},[el('tr',{},['Search term','Clicks','Impr.','Cost','Conv.'].map(function(t){return el('th',{text:t});}))])]);var b2=el('tbody');
+  P.terms.forEach(function(t){b2.appendChild(el('tr',{},[el('td',{text:t.term}),el('td',{text:comma(t.clicks)}),el('td',{text:comma(t.impressions)}),el('td',{text:money(t.cost,2)}),el('td',{text:String(Math.round(t.conversions*10)/10)})]));});
+  t2.appendChild(b2);tc.appendChild(el('div',{cls:'tw'},[t2]));s.appendChild(tc);}
+ return s;}
+
+function journeySection(V){var J=V.journey;if(!J)return null;
+ var s=el('section',{},[el('h2',{text:'What visitors from Google do'}),el('p',{cls:'h2note',text:'Organic Search sessions in GA4, '+fmtDate(J.from)+' to '+fmtDate(J.to)+' alongside Search Console queries. These are aggregate landing-page, event and referrer/page views. They do not join individual Search Console clicks to people in GA4.'})]);
+ var dev=J.devices||{},dt=(dev.desktop||0)+(dev.mobile||0)+(dev.tablet||0);
+ s.appendChild(el('div',{cls:'stats'},[el('div',{cls:'stat'},[el('b',{text:String(J.sessions)}),el('span',{text:'organic sessions'})]),el('div',{cls:'stat'},[el('b',{text:Math.round(J.engaged/J.sessions*100)+'%'}),el('span',{text:'were engaged ('+J.engaged+' of '+J.sessions+')'})]),el('div',{cls:'stat'},[el('b',{text:J.visibleClicks?Math.round(J.brandClicks/J.visibleClicks*100)+'%':'\u2014'}),el('span',{text:'of clicks with a visible search query were for the brand name ('+J.brandClicks+' of '+J.visibleClicks+')'})]),el('div',{cls:'stat'},[el('b',{text:dt?Math.round((dev.mobile||0)/dt*100)+'% mobile':'\u2014'}),el('span',{text:(dev.desktop||0)+' desktop, '+(dev.mobile||0)+' mobile sessions'})])]));
+ var cols=el('div',{cls:'cols'});
+ var c1=el('div',{cls:'card'},[el('h3',{text:'How far they get'}),el('p',{cls:'cnote',text:'Reported activity by step; session, user and event counts can differ. Steps overlap and do not form a nested conversion funnel.'})]);J.funnel.forEach(function(f,i){c1.appendChild(brow(f.label,'',f.n,J.funnel[0].n,i===J.funnel.length-1?'var(--gold)':'var(--teal)'));});cols.appendChild(c1);
+ var c2=el('div',{cls:'card'},[el('h3',{text:'Where they land'}),el('p',{cls:'cnote',text:'First page of the visit, grouped.'})]);J.landing.forEach(function(f){c2.appendChild(brow(f.label,'',f.n,J.landing[0].n,'var(--teal)',f.n+' \u00b7 '+Math.round(f.n/J.sessions*100)+'%'));});cols.appendChild(c2);
+ var c3=el('div',{cls:'card'},[el('h3',{text:'How they arrive'}),el('p',{cls:'cnote',text:'Source and first page.'})]);(J.entry||[]).forEach(function(p){c3.appendChild(el('div',{cls:'pth2'},[el('span',{cls:'pth'},[p.from+' \u2192 '+p.to]),el('b',{text:p.n+(p.n===1?' visit':' visits')})]));});cols.appendChild(c3);
+ var c4=el('div',{cls:'card'},[el('h3',{text:'Where they go next'}),el('p',{cls:'cnote',text:'Moves from one page to another inside the site.'})]);(J.onward||[]).forEach(function(p){c4.appendChild(el('div',{cls:'pth2'},[el('span',{cls:'pth'},[p.from+' \u2192 '+p.to]),el('b',{text:p.n+(p.n===1?' time':' times')})]));});cols.appendChild(c4);
+ s.appendChild(cols);
+ var ins=el('ul',{cls:'insights'});var home=J.landing.filter(function(x){return x.label==='Homepage';})[0],art=J.landing.filter(function(x){return x.label==='Guides and articles';})[0];
+ if(home&&J.visibleClicks)ins.appendChild(el('li',{text:home.n+' of '+J.sessions+' visits ('+Math.round(home.n/J.sessions*100)+'%) start on the homepage, and '+Math.round(J.brandClicks/J.visibleClicks*100)+'% of the clicks we can attribute to a query were for the brand name in this snapshot. Hidden queries are not classified.'}));
+ if(J.leadEvents>J.leadUsers&&J.leadUsers>0)ins.appendChild(el('li',{text:'All '+J.leadEvents+' organic lead events came from '+J.leadUsers+' visitor on '+J.leadPage+'. Event counts do not establish unique qualified prospects.'}));
+ var fo=J.funnel[2],fs=J.funnel[5];if(fo&&fs&&fo.n>fs.n*3)ins.appendChild(el('li',{text:'The enquiry form opens for '+fo.n+' of '+J.sessions+' visitors but only '+fs.n+' starts filling it in. It may be opening on its own (a popup), so \u201cform opened\u201d is not a sign of intent.'}));
+ s.appendChild(ins);
+ s.appendChild(el('p',{cls:'caveat',text:'Small numbers: '+J.sessions+' sessions in the stated reporting period. Treat these as patterns to check, not conclusions. Search Console hides most query text for low-volume searches, so brand share covers only the clicks it shows.'}));
+ return s;}
+
+function webmasterSection(){
+ var providers=S.webmasters;if(!providers||!providers.length)return null;
+ var section=el('section',{},[el('h2',{text:'Bing and Yandex Webmaster'}),el('p',{cls:'h2note',text:'Separate source records. Connection status, property verification and traffic availability are different facts.'})]),cards=el('div',{cls:'cols'});
+ providers.forEach(function(p){var card=el('div',{cls:'card'},[el('h3',{text:p.name}),el('p',{cls:'cnote',text:p.status}),el('p',{text:p.note})]);if(p.rows&&p.rows.length){var table=el('table',{cls:'t2'}),head=el('tr',{}),cols=Object.keys(p.rows[0]);cols.forEach(function(k){head.appendChild(el('th',{text:k}));});table.appendChild(el('thead',{},[head]));var body=el('tbody');p.rows.forEach(function(row){body.appendChild(el('tr',{},cols.map(function(k){return el('td',{text:row[k]===null?'Unavailable':String(row[k])});})));});table.appendChild(body);card.appendChild(el('div',{cls:'tw'},[table]));}cards.appendChild(card);});section.appendChild(cards);return section;
+}
+
+function render(){
+ applyFilters();
+ var root=document.getElementById('root');root.textContent='';
+ var c=cur(),w=c>=0?S.weeks[c]:null;
+ root.appendChild(el('header',{cls:'top'},[el('p',{cls:'brand'},[S.brand||'Example site',el('span',{text:' Search, analytics and advertising report'})]),el('p',{cls:'wk',text:w?'Week of '+fmtDate(w.start)+' '+d(w.start).getUTCFullYear():'No observations'})]));
+ root.appendChild(el('p',{cls:'banner',text:S.sample?'Illustrative sample: fictional figures demonstrate the report layout. This is not live account data.': 'Reference sample from a supplied historical snapshot. This page makes no live API calls.'}));
+ var fr=freshBar();if(fr)root.appendChild(fr);
+ var fb=filterBar();if(fb)root.appendChild(fb);
+ var ans=el('div',{cls:'answer'});
+ ans.appendChild(el('h1',{text:w&&has(w.sessions)?n(w.sessions,1)+' organic sessions a day in the latest observed week.':'Search visibility and recorded visitor activity.'}));
+ if(w)ans.appendChild(el('p',{cls:'sub',text:(has(w.leads)?n(w.leads,1)+' recorded lead events a day across channels. ':'')+(w.days?w.days+' observed days in this week. ':'')+'Lead events are measurements, not verified unique prospects.'}));
+ root.appendChild(ans);
+ var s1=el('section',{},[el('h2',{text:'Recorded lead events over time'}),el('p',{cls:'h2note',text:'Observed daily averages by week, with no forecasts. Missing observations are left blank.'}),el('div',{cls:'chart',id:'lead-history'})]);root.appendChild(s1);
+ var g2=el('div',{cls:'grid2'});
+ var s2=el('section',{},[el('h2',{text:'This week in context'}),el('p',{cls:'h2note',text:'Observed values and change from the preceding calendar week. Different sources can have different coverage.'})]);
+ var ul=el('ul',{cls:'chain'});
+ var EX={leads:'Recorded form/enquiry events, all channels',intent:'Recorded contact and form-action events, all channels',sessions:'Organic Search sessions in GA4',clicks:'Google Search Console clicks',impressions:'Google Search Console appearances',indexed:'Provider-reported indexed pages, when available'};
+ FIELDS.forEach(function(f){var k=f[0],v=w?w[k]:null,prev=c>0?S.weeks[c-1][k]:null;var sm=el('small',{},[el('span',{cls:cls(pct(v,prev)),text:pctTxt(pct(v,prev))+' vs previous week'})]);ul.appendChild(el('li',{},[el('span',{cls:'nm',text:f[1]}),el('span',{cls:'val'},[n(v,f[2]),sm]),el('span',{cls:'ex',text:EX[k]})]));});
+ s2.appendChild(ul);g2.appendChild(s2);
+ var s3=el('section',{},[el('h2',{text:'Organic sessions per day'}),el('p',{cls:'h2note',text:'Observed weekly averages from GA4 only. Search clicks are a separate metric and are not used as substitute sessions.'}),el('div',{cls:'chart',id:'traffic'})]);g2.appendChild(s3);root.appendChild(g2);
+ var V=S.visuals||{};
+ [sourceSection(),webmasterSection(),adsSection(V),journeySection(V),keywordSection(V),risksSection(V)].forEach(function(x){if(x)root.appendChild(x);});
+ var s4=el('section',{},[el('h2',{text:'This week'})]),nb=el('div',{cls:'notes two'});
+ [['moved','What the data shows','n-move'],['decisions','Questions and next steps','n-dec']].forEach(function(x){var text=(S.notes&&S.notes[x[0]])||'',list=el('ul',{});text.split('\n').forEach(function(line){if(line.trim())list.appendChild(el('li',{text:line.trim()}));});nb.appendChild(el('div',{cls:x[2]},[el('h3',{text:x[1]}),text.trim()?list:el('p',{cls:'empty',text:'Nothing noted.'})]));});s4.appendChild(nb);root.appendChild(s4);
+ root.appendChild(el('p',{cls:'foot',text:'Snapshot date '+S.updated+'. Lead events and sessions: GA4. Search clicks and impressions: Search Console. Ad spend and clicks: Google Ads. Metrics retain their own source scope.'}));
+ drawHistory('lead-history','leads','Recorded lead events per day by observed week');drawHistory('traffic','sessions','Organic sessions per day by observed week');
+}
+
+function svgEl(tag,a){var e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(var k in a)e.setAttribute(k,a[k]);return e;}
+function frame(box,h){var W=Math.max(320,box.clientWidth-16);var svg=svgEl('svg',{viewBox:'0 0 '+W+' '+h,width:W,height:h,role:'img'});return {svg:svg,W:W,H:h};}
+function axisX(svg,x,H,b){S.weeks.forEach(function(w,i){var dt=d(w.start);var th=new Date(dt.getTime()+3*864e5);var prev=i>0?new Date(d(S.weeks[i-1].start).getTime()+3*864e5):null;if(!prev||prev.getUTCMonth()!==th.getUTCMonth()){var t=svgEl('text',{x:x(i),y:H-b+20,'font-size':12,fill:'var(--muted)'});t.textContent=MON[th.getUTCMonth()];svg.appendChild(t);}});}
+
+function drawHistory(id,key,label){
+ var box=document.getElementById(id);if(!box)return;var old=box.querySelector('svg');if(old)old.remove();
+ var f=frame(box,id==='traffic'?240:300),svg=f.svg,W=f.W,H=f.H,l=44,r=12,t=18,b=38,N=S.weeks.length;
+ var values=S.weeks.map(function(w){return has(w[key])?+w[key]:null;}),maximum=Math.max.apply(null,values.filter(function(v){return v!==null;}).concat([1]));
+ var top=Math.ceil(maximum*1.2),bw=(W-l-r)/Math.max(1,N),x=function(i){return l+i*bw+bw/2;},y=function(v){return t+(H-t-b)*(1-v/top);};
+ svg.setAttribute('aria-label',label);
+ [0,top/2,top].forEach(function(v){svg.appendChild(svgEl('line',{x1:l,x2:W-r,y1:y(v),y2:y(v),stroke:'var(--line)'}));var tx=svgEl('text',{x:l-7,y:y(v)+4,'font-size':12,'text-anchor':'end',fill:'var(--muted)'});tx.textContent=n(v,v%1?1:0);svg.appendChild(tx);});
+ values.forEach(function(v,i){if(v===null)return;var bar=svgEl('rect',{x:x(i)-bw*.28,width:bw*.56,y:y(v),height:Math.max(0,H-b-y(v)),rx:3,fill:'var(--teal)'}),title=svgEl('title',{});title.textContent='Week of '+fmtDate(S.weeks[i].start)+': '+n(v,1)+' per day';bar.appendChild(title);svg.appendChild(bar);var caption=svgEl('text',{x:x(i),y:H-b+21,'font-size':11,'text-anchor':'middle',fill:'var(--muted)'});caption.textContent=fmtDate(S.weeks[i].start);svg.appendChild(caption);});box.appendChild(svg);
+}
+
+
+
+render();
+var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){drawHistory('lead-history','leads','Recorded lead events per day by observed week');drawHistory('traffic','sessions','Organic sessions per day by observed week');},150);});
+})();
+</script></body></html>

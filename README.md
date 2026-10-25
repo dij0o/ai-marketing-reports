@@ -4,6 +4,8 @@ Python scripts that let you (or an AI assistant) pull data from **Google Tag Man
 
 Start with [the full Webmaster reporting guide](docs/webmaster-reporting.md) for ownership verification, API access, environment variables, script inventory, output fields, date limits and troubleshooting.
 
+An [offline sample report](examples/README.md) shows the fuller presentation: observed trends, Ads, visitor activity, keyword gaps, Bing/Yandex and source status, with **no lead target or revenue forecast**. Its names and figures are fictional. Download `examples/sample-report.html` and open it locally, or regenerate it with `python scripts/sample_report.py`.
+
 The full walkthrough is in the companion blog post. This repo holds the code.
 
 > **Nothing here contains credentials.** Keys, tokens, your IDs and generated data are git-ignored. Run `python scripts/scan_for_private_data.py` before every push.

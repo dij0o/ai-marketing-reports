@@ -17,6 +17,15 @@ close rate, revenue forecast or actual-versus-plan chart. Recorded lead events a
 actual advertising budgets remain ordinary observed metrics. Event counts do not
 establish unique qualified prospects.
 
+## Use your own events
+
+Follow the [event customisation guide](../docs/customizing-events.md) before
+replacing the sample data. Define your site's outcomes, intent actions and content
+interest, align the website/GTM/GA4 names and parameters, then update the Python
+event lists and the report's `slices.leadEvents`, event rows and labels. The guide
+identifies each file to change, shows a portfolio example, and explains how to
+verify one action end to end. Renaming labels alone does not change what is counted.
+
 ## Render it again
 
 ```powershell

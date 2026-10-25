@@ -97,6 +97,11 @@ property ID is different from its `G-` measurement ID. The combined report reque
 only `webmasters.readonly` and `analytics.readonly`; configuration scripts elsewhere
 in the repository have different scope and product-permission requirements.
 
+For site-specific event definitions, parameters, outcome classification and sample
+labels, follow [Customise the reports for your site's events](customizing-events.md).
+This covers the exact script settings; changing a property ID alone does not adapt
+the example event model.
+
 Google Ads and Keyword Planner remain separate scripts. API enablement, service
 account identity, account permissions and project API approval are different gates.
 For new Basic access applications, Google's Ads-specific instructions require brand

@@ -6,6 +6,8 @@ Start with [the full Webmaster reporting guide](docs/webmaster-reporting.md) for
 
 An [offline sample report](examples/README.md) shows the fuller presentation: observed trends, Ads, visitor activity, keyword gaps, Bing/Yandex and source status, with **no lead target or revenue forecast**. Its names and figures are fictional. Download `examples/sample-report.html` and open it locally, or regenerate it with `python scripts/sample_report.py`.
 
+Before reusing the scripts, follow [Customise the reports for your site's events](docs/customizing-events.md). It maps website/GTM/GA4 events and parameters to the exact script settings, outcome versus interest counts, and sample report inputs and labels. The shipped event names are examples, not automatic discovery of your site's conversion model.
+
 The full walkthrough is in the companion blog post. This repo holds the code.
 
 > **Nothing here contains credentials.** Keys, tokens, your IDs and generated data are git-ignored. Run `python scripts/scan_for_private_data.py` before every push.
